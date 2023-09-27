@@ -40,9 +40,10 @@ h3{
 @media (max-width: 767px) {
   .col-md-3.fixed-column {
     position: absolute; /* 不再固定 */
-    top: 10px;
+    top: 40px;
     right: auto; /* 重置右边距 */
     width: 100%; /* 充满整个宽度 */
+    z-index: 1;
   }
   .col-md-8.a{
     position: absolute;
