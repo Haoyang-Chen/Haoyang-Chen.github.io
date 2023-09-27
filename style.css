@@ -24,3 +24,25 @@ h3{
   font-size: 2rem;
 }
 
+/* 默认样式适用于大屏幕，横屏模式 */
+.col-md-3.fixed-column {
+  position: fixed;
+  right: 30px;
+  !important;
+}
+
+/* 媒体查询：适应竖屏模式 */
+@media (max-width: 767px) {
+  .col-md-3.fixed-column {
+    position: absolute; /* 不再固定 */
+    top: 10px;
+    right: auto; /* 重置右边距 */
+    width: 100%; /* 充满整个宽度 */
+  }
+  .col-md-8.a{
+    position: absolute;
+    top: 900px;
+    !important;
+  }
+}
+
