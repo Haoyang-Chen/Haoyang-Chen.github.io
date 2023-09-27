@@ -31,6 +31,11 @@ h3{
   !important;
 }
 
+.col-md-8.a{
+  margin-top: 2em;
+  margin-left: 2.5em;
+}
+
 /* 媒体查询：适应竖屏模式 */
 @media (max-width: 767px) {
   .col-md-3.fixed-column {
@@ -41,7 +46,10 @@ h3{
   }
   .col-md-8.a{
     position: absolute;
-    top: 900px;
+    top: 750px;
+    right: auto;
+    margin-left: auto;
+    width: 100%;
     !important;
   }
 }
