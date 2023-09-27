@@ -1,6 +1,4 @@
-body {
-	background-color: #393737;
-}
+
 
 @media screen{
 	.container{
@@ -146,7 +144,7 @@ p{
 }
 */
 a {
-	color: #797c7a !important;
+	color: #ffc107 !important;
 }
 
 .header{
