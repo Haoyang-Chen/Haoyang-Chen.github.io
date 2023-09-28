@@ -41,6 +41,7 @@ h3{
   position: fixed;
   top: 0;
   width: 100%;
+  !important;
 }
 
 /* 媒体查询：适应竖屏模式 */
