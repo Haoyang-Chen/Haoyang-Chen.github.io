@@ -16,7 +16,7 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-warning" style="z-index: 999">
+	<nav class="navbar navbar-expand-lg navbar-dark bg-warning" id="navbar" style="z-index: 999">
 		<span class="navbar-brand mb-0 h1">Haoyang Chen</span>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
 			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -37,7 +37,7 @@
 	<div class="container-fluid">
 		<div class="row">
 
-			<div class="col-md-8 a">
+			<div class="col-md-8 a" style="position: absolute; top: 50px;">
 				<h3 class="mt-4">About</h3>
 
 				<p>
@@ -78,6 +78,8 @@
 
 				<h3 class="mt-4" id="Research">Research Projects</h3>
 
+				<hr class="border-5">
+
 				<dl class="row ml-3">
 					<dt class="col-md-10 h5">
 						Modularized Interpretable MDSS with Visual Programming
@@ -87,11 +89,9 @@
 						<img class="rounded mx-auto d-block img-fluid" src="assets/images/ECG_XAI.png">
 					</dd>
 					<dd class="col-md-6">
-						<div>
+						<div style="text-align: justify;">
 							<u>Overview:</u> <br>
-							Designing visual programming toolkit to help physicians build customized diagnosis model.<br>
-							Combining first-order-logic with neural networks to convert flowcharts into trainable models. <br>
-							Modularized structure offers step-by-step visualization and interpretation.<br>
+							Current MDSS provides fixed guidlines to doctors while each doctor has a unique way of diagnose, e.g. thresholds of indexes, sequence of examinations. Existing medical prediction tools also offer poor interpretability which is confusing to doctors. This project focuses on enabling doctors to build diagnostic models with their individual preference. With our toolkit, doctors can use visual programming to customize a prediction model that is highly interpretable and precise in practice. <span class="font-weight-bold">(Ongoing)</span>
 						</div>
 					</dd>
 				</dl>
@@ -107,11 +107,9 @@
 							<img class="rounded mx-auto d-block img-fluid" src="assets/images/framework.png">
 						</div>
 						<div class="col-md-12">
-							<div>
+							<div style="text-align: justify;">
 								<u>Overview:</u><br>
-								Model driver cruising preference with a light-weighted LSTM. <br>
-								Carried out on-field User Study on 106 professional drivers to model driver decision. <br>
-								Used dual-agent Reinforcement Learning framework to satisfy driver preference and demand-supply balance.
+								Traditional vehicle reposition technique used in ride-hailing context turns out to have little effect due to their ignorance on drivers' preference and response behaviors. This project first demonstrates that drivers' do have personalized cruising preference and carried out experiments to prove it necessary to consider drivers' preference when repositioning. Our on-field User Study of 106 professional drivers further stressed that drivers do have preference and their preference is a key factor in their decision making process of whether to accept a reposition or not. With a LSTM predictor on drivers' preference, a decision model on drivers and a dual-agent DRL framework, our solution can both satisfy driver preference and demand-supply gap.
 								<br>
 							</div>
 						</div>
@@ -132,14 +130,13 @@
 					<dd class="col-md-6">
 						<div>
 							<u>Overview:</u> <br>
-							Built a prototype using headset and endoscopes to capture inner-ear video. <br>
-							Used Lucas-Kanade optical flow method to detect ear motion as input to VR device. <br>
-							Carried out small-scale User Study on 15 volunteers. <br>
+							Virtual Reality is trending, while there are devices like Xbox Adaptive Controller to provide accessibility for the people in need, they are still hard to use in VR context because people cannot see through a VR Headset. When people have to click a button, they can hardly find it without seeing it. This project detects ear motion to use it as an input to the VR devices as a replacement of traditional controllers to provide accessibility to the people with special needs. Our User Study on 15 volunteers showed that this method is effective and easy to use.
 						</div>
 					</dd>
 				</dl>
 
-				<hr class="border-5">
+<!--				<hr class="border-5">-->
+
 			</div>
 			<div class="col-md-3 fixed-column" style="margin-top:2em;">
 				<div class="row mt-4 mb-4">
@@ -165,9 +162,15 @@
 				<br>
 				<div class="row justify-content-center text-center">
 					<div class="col-11">
-						<i class="far fa-address-card"></i>
-						<a class="text-dark"
-						   href="assets/CV_Haoyang_CHEN_eng.pdf">CV</a>
+						<a href="https://www.linkedin.com/in/chen-hy" target="_blank">
+							<img src="assets/linkedin.png" alt="LinkedIn Profile" width=30 height=30>
+						</a>
+						<a href="https://github.com/Haoyang-Chen" target="_blank">
+							<img src="assets/github.png" alt="github" width=30 height=30>
+						</a>
+						<a href="assets/CV_Haoyang_CHEN_eng.pdf">
+							<img src="assets/cv.png" alt="cv" width=30 height=30>
+						</a>
 					</div>
 				</div>
 			</div>

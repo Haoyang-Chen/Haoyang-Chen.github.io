@@ -27,13 +27,20 @@ h3{
 /* 默认样式适用于大屏幕，横屏模式 */
 .col-md-3.fixed-column {
   position: fixed;
-  right: 30px;
+  top: 50px;
+  right: 40px;
   !important;
 }
 
 .col-md-8.a{
   margin-top: 2em;
   margin-left: 2.5em;!important;
+}
+
+#navbar{
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 /* 媒体查询：适应竖屏模式 */
