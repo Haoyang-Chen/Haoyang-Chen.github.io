@@ -1,5 +1,4 @@
 
-
 a {
   color: #ffc107 !important;
 }
@@ -15,16 +14,12 @@ a {
   padding-right: 10px;;
 }
 
-/*body{*/
-/*  font-family: sans-serif;*/
-/*}*/
 
 h3{
   font-family: cursive;
   font-size: 2rem;
 }
 
-/* 默认样式适用于大屏幕，横屏模式 */
 .col-md-3.fixed-column {
   position: fixed;
   top: 50px;
@@ -47,13 +42,12 @@ h3{
   !important;
 }
 
-/* 媒体查询：适应竖屏模式 */
 @media (max-width: 767px) {
   .col-md-3.fixed-column {
-    position: absolute; /* 不再固定 */
+    position: absolute;
     top: 40px;
-    right: auto; /* 重置右边距 */
-    width: 100%; /* 充满整个宽度 */
+    right: auto;
+    width: 100%;
     z-index: 1;
   }
   .col-md-8.a{
