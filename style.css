@@ -1,6 +1,10 @@
 
-a {
+a.norm {
   color: #ffc107 !important;
+}
+
+a.special{
+  color: black; !important;
 }
 
 .nav-link {
