@@ -2,8 +2,10 @@
 <html lang="en">
 
 <head>
+	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Haoyang Chen</title>
+    <meta name="description" content="Haoyang Chen, PhD student at the National University of Singapore. Research in human-computer interaction, explainable AI, and human–AI alignment.">
 	<link rel="stylesheet"
 		href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
 		integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
@@ -16,9 +18,10 @@
 </head>
 
 <body>
-	<nav class="navbar navbar-expand-lg navbar-dark bg-warning" id="navbar" style="z-index: 999">
+    <a class="skip-link" href="#About">Skip to content</a>
+	<nav class="navbar navbar-expand-lg navbar-light" id="navbar" aria-label="Main navigation">
 		<span class="navbar-brand mb-0 h1">Haoyang Chen</span>
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+		<button class="navbar-toggler" type="button"
 			aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
 		</button>
@@ -34,42 +37,43 @@
 					<a class="nav-link" href="#Research">Research</a>
 				</li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#Side">Side Projects</a>
+                    <a class="nav-link" href="#Teaching">Teaching</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#Service">Service</a>
                 </li>
 			</ul>
 		</div>
 	</nav>
 
-	<div class="container-fluid">
-		<div class="row">
+	<div class="container-fluid page-shell">
+		<div class="row page-layout">
 
-			<div class="col-md-8 a">
-				<h3 class="mt-4" id="About">About</h3>
+			<main class="main-content">
+				<h2 class="mt-4" id="About">About</h2>
 
 				<p>
-					My research interests lie in <b>Human-Computer Interaction (HCI)</b>,  <b>Human-Centered Computing</b>, <b>Human Behavior Modeling</b> also in <b>Transportation Informatics</b> and <b>Health Informatics</b>. My goal is to bridge the gap between technological expertise and user-friendly experiences by leveraging advanced technologies and creating solutions aligned with user preferences.
-					I am now working at <a class="norm" href="https://ubiquitous.comp.nus.edu.sg" target="_blank">Ubicomp Lab</a> in National University of Singapore as a PhD Student with
-					<a class="norm" href="https://www.brianlim.net" target="_blank"> Prof. Brian lim</a>. Before joining NUS, I spent 2 years as a Research Assistant at COOLA Lab in Southeast University, where I worked with
-					<a class="norm" href="https://scholar.google.com/citations?user=60XG9FIAAAAJ&hl=en" target="_blank">Prof. Yan LYU</a> and <a class="norm" href="https://wanyuanwang.github.io" target="_blank">Prof. Wanyuan Wang</a>
+					My research interests lie in <b>Human-Computer Interaction (HCI)</b>,  <b>Human-Centered Computing</b>, <b>Human Behavior Modeling</b>, with applications in <b>Transportation Informatics</b> and <b>Health Informatics</b>. My goal is to bridge the gap between technological expertise and user-friendly experiences by leveraging advanced technologies and creating solutions aligned with user preferences.
+                </p>
+                <p>
+					I am a PhD student at <a class="norm" href="https://ubiquitous.comp.nus.edu.sg" target="_blank" rel="noopener noreferrer">Ubicomp Lab</a> at the National University of Singapore, advised by
+					<a class="norm" href="https://www.brianlim.net" target="_blank" rel="noopener noreferrer"> Prof. Brian Lim</a>. Before joining NUS, I spent two years as a research assistant at COOLA Lab in Southeast University, where I worked with
+					<a class="norm" href="https://scholar.google.com/citations?user=60XG9FIAAAAJ&hl=en" target="_blank" rel="noopener noreferrer">Prof. Yan LYU</a> and <a class="norm" href="https://wanyuanwang.github.io" target="_blank" rel="noopener noreferrer">Prof. Wanyuan Wang</a>.
 				</p>
 
-				<p></p>
-				<br>
-
-				<h3 class="mt-4" id="Publication">Publications</h3>
-				<p></p>
-				<dl class="row ml-3">
+				<h2 class="mt-4" id="Publication">Publications</h2>
+				<dl class="row publication-list">
 
 					<dt class="col-md-2">
 						CHI'26
 					</dt>
 					<dd class="col-md-10">
 						<div>
-							Editable XAI: Toward Bidirectional Human-AI Alignment with Co-Editable Explanations of Interpretable Attributes
+							<strong class="publication-title">Editable XAI: Toward Bidirectional Human-AI Alignment with Co-Editable Explanations of Interpretable Attributes</strong>
 							<br>
 							<span class="font-italic"> <span class="font-weight-bold">H Chen</span>, J Bai, T Fang, B Lim</span>
 							<br>
-							<a class="norm" href="assets/Editable_XAI%20paper.pdf" target="_blank">[Link]</a> <a class="norm" href="https://github.com/Haoyang-Chen/EditableXAI" target="_blank">[Github]</a>
+							<a class="norm" href="assets/Editable_XAI%20paper.pdf" target="_blank" rel="noopener noreferrer">PDF</a> <a class="norm" href="https://github.com/Haoyang-Chen/EditableXAI" target="_blank" rel="noopener noreferrer">Code</a>
 						</div>
 
 					</dd>
@@ -79,11 +83,11 @@
 					</dt>
 					<dd class="col-md-10">
 						<div>
-							i-Rebalance: Personalized Vehicle Repositioning for Supply Demand Balance
+							<strong class="publication-title">i-Rebalance: Personalized Vehicle Repositioning for Supply Demand Balance</strong>
 							<br>
 							<span class="font-italic"> <span class="font-weight-bold">H Chen</span>, P Sun, Q Song, W Wang, W Wu, W Zhang, G Gao, Y Lyu</span>
                             <br>
-                            <a class="norm" href="assets/i_Rebalance paper.pdf" target="_blank">[Link]</a> <a class="norm" href="https://github.com/Haoyang-Chen/i-Rebalance" target="_blank">[Github]</a>
+                            <a class="norm" href="assets/i_Rebalance%20paper.pdf" target="_blank" rel="noopener noreferrer">PDF</a> <a class="norm" href="https://github.com/Haoyang-Chen/i-Rebalance" target="_blank" rel="noopener noreferrer">Code</a>
 						</div>
 
 					</dd>
@@ -93,187 +97,181 @@
 					</dt>
 					<dd class="col-md-10">
 						<div>
-							Multi-agent Reinforcement Learning for Fleet Management: A Survey
+							<strong class="publication-title">Multi-agent Reinforcement Learning for Fleet Management: A Survey</strong>
 							<br>
 							<span class="font-italic"><span class="font-weight-bold">H Chen</span>, Z Li, X Yao</span>
                             <br>
-                            <a class="norm" href="assets/MARL%20Survey.pdf" target="_blank">[Link]</a>
-                        </div>
-					</dd>
-				</dl>
-				<br>
-
-				<h3 class="mt-4" id="Research">Research Projects</h3>
-
-				<hr class="border-5">
-
-				<dl class="row ml-3">
-					<dt class="col-md-12 h5">
-						Editable XAI: Toward Bidirectional Human-AI Alignment with Co-Editable Explanations of Interpretable Attributes
-					</dt>
-					<dd class="col-md-12">
-					<dd class="col-md-6">
-						<br>
-						<img class="rounded mx-auto d-block img-fluid" src="assets/images/EditableXAI.png">
-					</dd>
-					<dd class="col-md-6">
-						<div style="text-align: justify;">
-							<br>
-							<u>Overview:</u> <br>
-							While Explainable AI (XAI) helps users understand AI decisions, misalignment in domain knowledge can lead to disagreement. This inconsistency hinders understanding, and because explanations are often read-only, users lack the control to improve alignment. We propose making XAI editable, allowing users to write rules to improve control and gain deeper understanding through the generation effect of active learning. We developed CoExplain, leveraging a neural network for universal representation and symbolic rules for intuitive reasoning on interpretable attributes. CoExplain explains the neural network with a faithful proxy decision tree, parses user-written rules as an equivalent neural network graph, and collaboratively optimizes the decision tree. In a user study (N=43), CoExplain and manually editable XAI improved user understanding and model alignment compared to read-only XAI. CoExplain was easier to use with fewer edits and less time. This work contributes Editable XAI for bidirectional AI alignment, improving understanding and control.
-							<div><a class="norm" href="https://github.com/Haoyang-Chen/EditableXAI" target="_blank">[Github Repo]</a></div>
-						</div>
-					</dd>
-				</dl>
-
-				<hr class="border-5">
-
-				<dl class="row ml-3">
-					<dt class="col-md-12 h5">
-						Modularized Interpretable Medical Decision Support System with Visual Programming
-					</dt>
-					<dd class="col-md-12">
-					<dd class="col-md-6">
-					<br>
-						<img class="rounded mx-auto d-block img-fluid" src="assets/images/ECG_XAI.png">
-					</dd>
-					<dd class="col-md-6">
-						<div style="text-align: justify;">
-							<br>
-							<u>Overview:</u> <br>
-							Current medical decision support systems (MDSS) provides fixed guidlines to doctors while each doctor has a unique way of diagnose, e.g. thresholds of indexes, sequence of examinations. Existing medical prediction tools also offer poor interpretability which is confusing to doctors. This project focuses on enabling doctors to build diagnostic models with their individual preference. With our toolkit, doctors can use visual programming to customize a prediction model that is highly interpretable and precise in practice.
-							<div><a class="norm" href="https://github.com/Haoyang-Chen/rapidminer-extension-ECG_XAI" target="_blank">[GitHub Repo]</a></div><div><a class="norm" href="https://github.com/Haoyang-Chen/RuleBuilder" target="_blank">[GitHub Repo]</a></div>
-						</div>
-					</dd>
-				</dl>
-
-				<hr class="border-5">
-
-				<dl class="row ml-3">
-					<dt class="col-md-10 h5">
-						i-Rebalance: Personalized Vehicle Repositioning for Supply Demand Balance
-					</dt>
-					<dd class="col-md-12">
-						<div class="col-md-12">
-							<br>
-							<img class="rounded mx-auto d-block img-fluid" src="assets/images/framework.png">
-						</div>
-						<div class="col-md-12">
-							<div style="text-align: justify;">
-								<u>Overview:</u><br>
-                                Traditional vehicle reposition techniques used in ride-hailing contexts turn out to have little effect due to their ignorance on drivers' preference and response behaviors. This project first demonstrates that drivers do have personalized cruising preferences and carried out experiments to prove it necessary to consider drivers' preference when repositioning. Our on-field User Study of 106 professional drivers further stressed that drivers do have preference and their preference is a key factor in their decision making process of whether to accept a reposition or not. Made up with three key modules: an LSTM predictor of drivers' preferences, a decision model on drivers and a dual-agent DRL framework, our solution can both satisfy driver preferences and demand-supply gap.
-								<a class="norm" href="https://github.com/Haoyang-Chen/I-Rebalance" target="_blank">[GitHub Repo]</a>
-								<br>
-							</div>
-						</div>
-					</dd>
-				</dl>
-
-				<hr class="border-5">
-
-				<dl class="row ml-3">
-					<dt class="col-md-10 h5">
-						Ear Motion Tracking System for VR Devices
-					</dt>
-					<dd class="col-md-12">
-					<dd class="col-md-6">
-					<br>
-						<img class="rounded mx-auto d-block img-fluid" src="assets/images/earmotion.png">
-					</dd>
-					<dd class="col-md-6">
-						<div>
-							<br>
-							<u>Overview:</u> <br>
-							Virtual Reality is trending, while there are devices like Xbox Adaptive Controller to provide accessibility for the people in need, they are still hard to use in VR context because people cannot see through a VR Headset. When people have to click a button, they can hardly find it without seeing it. This project detects ear motion and uses it as an input to the VR devices as a replacement of traditional controllers to provide accessibility to the people with special needs. Our user study on 15 volunteers showed that this method is effective and easy to use. This device gives everyone the access to control a VR device, even if they are not good at moving their ears.
-                            <br>
-                            <a class="norm" href="https://github.com/Romi-plus-plus/Med">[GitHub Repo]</a>
+                            <a class="norm" href="assets/MARL%20Survey.pdf" target="_blank" rel="noopener noreferrer">PDF</a>
                         </div>
 					</dd>
 				</dl>
 
-<!--                <hr class="border-5">-->
-                <br>
-
-                <h3 class="mt-4" id="Side">Side Projects</h3>
-
-                <hr class="border-5">
-
-                <dl class="row ml-3">
-                    <dt class="col-md-12 h5">
-                        C-H-ina: An Online Hotel Searching Service
-                    </dt>
-                    <dd class="col-md-12">
-                    <dd class="col-md-6">
-                        <br>
-                        <img class="rounded mx-auto d-block img-fluid" src="assets/images/book.png">
-                    </dd>
-                    <dd class="col-md-6">
-                        <div style="text-align: justify;">
-                            <br>
-                            <u>Overview:</u> <br>
-                            This project aims at building an online hotel searching website to provide access to hotels all over China. We crawled data and pictures of over 10,000+ hotels from booking.com. This website was built using SSM framework (Spring, Spring MVC, Mybatis) and has been on service for a semester.
-                            <div><a class="norm" href="https://github.com/A-BigTree/seu_hotel_Booking" target="_blank">[GitHub Repo]</a></div>
+				<h2 class="mt-4" id="Research">Research Projects</h2>
+                <article class="research-project">
+                    <h3>Editable XRL: Toward Bidirectional Human–Agent Alignment of Rational Decision-Making with Markov Tree Explanations</h3>
+                    <div class="project-layout">
+                        <!-- Figure 3 from the user-provided Editable XRL manuscript, page 9. -->
+                        <button class="project-image" type="button" aria-expanded="false"><img src="assets/images/editable-xrl-workflow.png" alt="CoChoice's Read–Revise–Reinforce workflow, with Markov decision trees and the Actor, World Model, and Critic" loading="lazy" width="1056" height="744"></button>
+                        <div class="project-description">
+                            <p>CoChoice helps people understand and guide reinforcement-learning agents through editable Markov decision trees. Its Read–Revise–Reinforce workflow connects an agent’s actions, predicted consequences, and values, then turns users’ corrections into guidance for continued learning.</p>
+                            <details class="project-details">
+                                <summary>More details</summary>
+                                <p><strong>Read:</strong> Compare action choices, possible outcomes, and expected values in a Markov decision tree grounded in the agent’s Actor, World Model, and Critic.</p>
+                                <p><strong>Revise:</strong> Edit action probabilities, outcome likelihoods, or values. CoChoice translates these corrections into supervised training targets for the corresponding model components.</p>
+                                <p><strong>Reinforce:</strong> Continue reinforcement learning while retaining user edits as training constraints, balancing task performance with human alignment. Users can inspect the updated explanation and repeat the cycle.</p>
+                                <p>In a study with 39 participants collaborating with an agent in Overcooked, CoChoice improved user understanding and alignment compared with read-only and manually editable explanations. Stakeholder interviews explored opportunities in transportation, medicine, and cognitive modeling. The work introduces Editable XRL as a paradigm for bidirectional human–agent alignment.</p>
+                            </details>
                         </div>
-                    </dd>
-                </dl>
-
-                <hr class="border-5">
-
-                <dl class="row ml-3">
-                    <dt class="col-md-12 h5">
-                        Industrial Big-Data Inspection System
-                    </dt>
-                    <dd class="col-md-12">
-                    <dd class="col-md-6">
-                        <br>
-                        <img class="rounded mx-auto d-block img-fluid" src="assets/images/insp.png">
-                    </dd>
-                    <dd class="col-md-6">
-                        <div style="text-align: justify;">
-                            <br>
-                            <u>Overview:</u> <br>
-                            IoT devices are widely used in industries like chemical and electricity, while they provide real-time monitoring of the facilities, they requires inspection as well. This system targets at providing convenient inspection system for factories, empowered with a dashboard and a InfloxDB time-series database driven anomaly detection algorithm.
-                            <div><a class="norm" href="https://github.com/Haoyang-Chen/Inspection" target="_blank">[GitHub Repo]</a></div>
+                    </div>
+                </article>
+                <article class="research-project">
+                    <h3>Trellis: Interpretable DAG Scaffolding for Non-Linear LLM-Assisted Sensemaking</h3>
+                    <div class="project-layout">
+                        <!-- Figure 1 from the user-provided Trellis manuscript, page 1. -->
+                        <button class="project-image" type="button" aria-expanded="false"><img src="assets/images/trellis-overview.png" alt="Trellis transforms a linear conversation into a graph workspace with branching, merging, context briefs, and structural refactoring" loading="lazy" width="2000" height="896"></button>
+                        <div class="project-description">
+                            <p>Trellis turns LLM conversations into an interactive graph workspace for non-linear sensemaking. People can branch into alternative lines of inquiry, merge complementary insights, and reorganize their reasoning while controlling the context available to the LLM.</p>
+                            <details class="project-details">
+                                <summary>More details</summary>
+                                <p><strong>Branch and merge:</strong> Break open-ended problems into parallel explorations, then consolidate complementary ideas. A directed acyclic graph makes conversation turns and inherited context explicit.</p>
+                                <p><strong>Maintain an overview:</strong> AI-generated context briefs summarize evolving lines of inquiry, helping users keep track of the larger task while exploring individual branches.</p>
+                                <p><strong>Refactor the structure:</strong> Preview, accept, or reject bounded AI suggestions for reorganizing the graph and clarifying relationships between ideas.</p>
+                                <p>A user study found Trellis helpful for exploring alternatives, managing divergent hypotheses, integrating ideas across branches, and maintaining global task awareness. The project explores how interpretable, user-controlled context structures can support iterative sensemaking with LLMs.</p>
+                            </details>
                         </div>
-                    </dd>
-                </dl>
-
-                <hr class="border-5">
-
-                <dl class="row ml-3">
-                    <dt class="col-md-12 h5">
-                        Semantic Segmentation on CityScapes Dataset
-                    </dt>
-                    <dd class="col-md-12">
-                    <dd class="col-md-6">
-                        <br>
-                        <img class="rounded mx-auto d-block img-fluid" src="assets/images/seg.png">
-                    </dd>
-                    <dd class="col-md-6">
-                        <div style="text-align: justify;">
-                            <br>
-                            <u>Overview:</u> <br>
-                            Semantic Segmentation is an essential technique used in autonomous driving. It helps the computer to distinguish different objects captured by the camera, making further decisions possible. We trained a U-net semantic segmentation model on CityScape Dataset with an accuracy of 76.75%.
-                            <div><a class="norm" href="https://github.com/Haoyang-Chen/Semantic_Seg" target="_blank">[GitHub Repo]</a></div>
+                    </div>
+                </article>
+                <article class="research-project">
+                    <h3>TreePINN: Tree Prior Initialized Neural Network</h3>
+                    <div class="project-layout">
+                        <!-- Figure 1 from the user-provided TreePINN manuscript, page 3. -->
+                        <button class="project-image" type="button" aria-expanded="false"><img src="assets/images/treepinn-overview.png" alt="TreePINN maps a fitted decision tree into a sparse neural network with soft conditions, path layers, and prediction outputs" loading="lazy" width="960" height="612"></button>
+                        <div class="project-description">
+                            <p>TreePINN converts fitted decision trees into trainable neural networks, using their structure, split rules, leaf predictions, and node statistics as an informed starting point. A learned Route-State carries earlier decision context into later routing, allowing end-to-end training to adapt beyond the original tree partition.</p>
+                            <details class="project-details">
+                                <summary>More details</summary>
+                                <p><strong>Tree-based initialization:</strong> A sparse neural backbone follows the source tree’s depth and parent–child structure. Soft split conditions and partial decision paths transfer its rules, while leaf predictions initialize the output.</p>
+                                <p><strong>Calibrated split softness:</strong> Feature margins, sample support, and impurity reduction determine how decisively each split behaves at initialization, giving less reliable rules greater flexibility.</p>
+                                <p><strong>Path-dependent adaptation:</strong> Route-State passes context along the tree’s edges and learns adjustments to downstream decisions. Its routing adjustment starts at zero, preserving the tree-derived initial predictor before training.</p>
+                                <p>Evaluation spans eight classification and regression datasets in single-tree and random-forest settings. TreePINN performs comparably to or better than competing tree-informed methods on most evaluated tasks, with additional analyses of limited-data learning, source-tree fidelity, and distilled-tree complexity.</p>
+                            </details>
                         </div>
-                    </dd>
-                </dl>
-                <br>
-                <div class="footer">
-                    <div align="center" style="width: 25%">
+                    </div>
+                </article>
+                <article class="research-project">
+                    <h3>Editable XAI: Toward Bidirectional Human-AI Alignment with Co-Editable Explanations of Interpretable Attributes</h3>
+                    <div class="project-layout">
+                        <button class="project-image" type="button" aria-expanded="false"><img src="assets/images/EditableXAI.png" alt="Editable XAI: Toward Bidirectional Human-AI Alignment with Co-Editable Explanations of Interpretable Attributes — project illustration" loading="lazy" width="1741" height="948"></button>
+                        <div class="project-description">
+                            <p>CoExplain lets people edit explanations through rules on interpretable attributes, helping them understand and improve AI alignment. A study with 43 participants found improvements in understanding and alignment compared with read-only explanations.</p>
+                            <details class="project-details">
+                                <summary>More details</summary>
+                                <p>While Explainable AI (XAI) helps users understand AI decisions, misalignment in domain knowledge can lead to disagreement. This inconsistency hinders understanding, and because explanations are often read-only, users lack the control to improve alignment. We propose making XAI editable, allowing users to write rules to improve control and gain deeper understanding through the generation effect of active learning. We developed CoExplain, leveraging a neural network for universal representation and symbolic rules for intuitive reasoning on interpretable attributes. CoExplain explains the neural network with a faithful proxy decision tree, parses user-written rules as an equivalent neural network graph, and collaboratively optimizes the decision tree. In a user study (N=43), CoExplain and manually editable XAI improved user understanding and model alignment compared to read-only XAI. CoExplain was easier to use with fewer edits and less time. This work contributes Editable XAI for bidirectional AI alignment, improving understanding and control.</p>
+                                <div class="project-links"><a class="norm" href="https://github.com/Haoyang-Chen/EditableXAI" target="_blank" rel="noopener noreferrer">Code</a></div>
+                            </details>
+                        </div>
+                    </div>
+                </article>
+                <article class="research-project">
+                    <h3>i-Rebalance: Personalized Vehicle Repositioning for Supply Demand Balance</h3>
+                    <div class="project-layout">
+                        <!-- Figure 2, page 3 of assets/i_Rebalance%20paper.pdf; rendered with all PDF labels. -->
+                        <button class="project-image" type="button" aria-expanded="false"><img src="assets/images/irebalance-overview.png" alt="i-Rebalance overview: driver behavior modeling and sequential vehicle repositioning with Grid and Vehicle agents" loading="lazy" width="1980" height="532"></button>
+                        <div class="project-description">
+                            <p>i-Rebalance personalizes ride-hailing vehicle repositioning by combining driver preference prediction, a driver decision model, and dual-agent reinforcement learning. A field study with 106 professional drivers highlighted the importance of considering their preferences.</p>
+                            <details class="project-details">
+                                <summary>More details</summary>
+                                <p>Traditional vehicle reposition techniques used in ride-hailing contexts turn out to have little effect due to their ignorance on drivers' preference and response behaviors. This project first demonstrates that drivers do have personalized cruising preferences and carried out experiments to prove it necessary to consider drivers' preference when repositioning. Our on-field User Study of 106 professional drivers further stressed that drivers do have preference and their preference is a key factor in their decision making process of whether to accept a reposition or not. Made up with three key modules: an LSTM predictor of drivers' preferences, a decision model on drivers and a dual-agent DRL framework, our solution can both satisfy driver preferences and demand-supply gap.</p>
+                                <div class="project-links"><a class="norm" href="https://github.com/Haoyang-Chen/I-Rebalance" target="_blank" rel="noopener noreferrer">Code</a></div>
+                            </details>
+                        </div>
+                    </div>
+                </article>
+                <article class="research-project">
+                    <h3>Modularized Interpretable Medical Decision Support System with Visual Programming</h3>
+                    <div class="project-layout">
+                        <button class="project-image" type="button" aria-expanded="false"><img src="assets/images/ECG_XAI.png" alt="Modularized Interpretable Medical Decision Support System with Visual Programming — project illustration" loading="lazy" width="2008" height="1524"></button>
+                        <div class="project-description">
+                            <p>A visual programming toolkit lets doctors customize interpretable diagnostic models around their individual preferences, including examination sequences and thresholds. The project explores more flexible, understandable medical decision support.</p>
+                            <details class="project-details">
+                                <summary>More details</summary>
+                                <p>Current medical decision support systems (MDSS) provide fixed guidelines to doctors, while each doctor has an individual approach to diagnosis, e.g. thresholds of indexes, sequence of examinations. Existing medical prediction tools also offer poor interpretability which is confusing to doctors. This project focuses on enabling doctors to build diagnostic models with their individual preference. With our toolkit, doctors can use visual programming to customize a prediction model that is highly interpretable and precise in practice.</p>
+                                <div class="project-links"><a class="norm" href="https://github.com/Haoyang-Chen/rapidminer-extension-ECG_XAI" target="_blank" rel="noopener noreferrer">RapidMiner extension</a> <a class="norm" href="https://github.com/Haoyang-Chen/RuleBuilder" target="_blank" rel="noopener noreferrer">RuleBuilder</a></div>
+                            </details>
+                        </div>
+                    </div>
+                </article>
+                <article class="research-project">
+                    <h3>Ear Motion Tracking System for VR Devices</h3>
+                    <div class="project-layout">
+                        <button class="project-image" type="button" aria-expanded="false"><img src="assets/images/earmotion.png" alt="Ear Motion Tracking System for VR Devices — project illustration" loading="lazy" width="978" height="704"></button>
+                        <div class="project-description">
+                            <p>An ear-motion input system explores more accessible interaction with VR devices. A study with 15 volunteers found the approach effective and easy to use.</p>
+                            <details class="project-details">
+                                <summary>More details</summary>
+                                <p>Virtual Reality is trending, while there are devices like Xbox Adaptive Controller to provide accessibility for the people in need, they are still hard to use in VR context because people cannot see through a VR Headset. When people have to click a button, they can hardly find it without seeing it. This project detects ear motion and uses it as an input to the VR devices as a replacement of traditional controllers to provide accessibility to the people with special needs. Our user study on 15 volunteers showed that this method is effective and easy to use. This device gives everyone the access to control a VR device, even if they are not good at moving their ears.</p>
+                                <div class="project-links"><a class="norm" href="https://github.com/Romi-plus-plus/Med" target="_blank" rel="noopener noreferrer">Code</a></div>
+                            </details>
+                        </div>
+                    </div>
+                </article>
+
+                <h2 class="mt-4" id="Teaching">Teaching</h2>
+                <p class="teaching-institution">National University of Singapore</p>
+                <ul class="teaching-list">
+                    <li class="teaching-item">
+                        <a class="teaching-course" href="https://nusmods.com/courses/CS4246/reinforcement-learning-and-sequential-decision-making" target="_blank" rel="noopener noreferrer"><span class="teaching-code">CS4246/5446</span><span>Reinforcement Learning and Sequential Decision Making</span></a>
+                        <span class="teaching-term">AY2026/2027 · Sem 1</span>
+                    </li>
+                    <li class="teaching-item">
+                        <a class="teaching-course" href="https://nusmods.com/courses/CP2107/independent-introduction-to-cs-research-odyssey" target="_blank" rel="noopener noreferrer"><span class="teaching-code">CP2107</span><span>Independent Introduction to CS Research (Odyssey)</span></a>
+                        <span class="teaching-term">Summer 2026 · May–Aug</span>
+                    </li>
+                    <li class="teaching-item">
+                        <a class="teaching-course" href="https://nusmods.com/courses/CS3263/foundations-of-artificial-intelligence" target="_blank" rel="noopener noreferrer"><span class="teaching-code">CS3263</span><span>Foundations of Artificial Intelligence</span></a>
+                        <span class="teaching-term">AY2025/2026 · Sem 2</span>
+                    </li>
+                    <li class="teaching-item">
+                        <a class="teaching-course" href="https://nusmods.com/courses/CS3244/machine-learning" target="_blank" rel="noopener noreferrer"><span class="teaching-code">CS3244</span><span>Machine Learning</span></a>
+                        <span class="teaching-term">AY2025/2026 · Sem 1</span>
+                    </li>
+                </ul>
+
+                <h2 class="mt-4" id="Service">Service</h2>
+                <ul class="service-list">
+                    <li class="service-item">
+                        <span class="service-venue">ACM Conference on Human Factors in Computing Systems (CHI)</span>
+                        <span class="service-role">Reviewer · 2027</span>
+                    </li>
+                    <li class="service-item">
+                        <span class="service-venue">AAAI Conference on Artificial Intelligence (AAAI)</span>
+                        <span class="service-role">Reviewer · 2027</span>
+                    </li>
+                    <li class="service-item">
+                        <span class="service-venue">ACM Conference on Human Factors in Computing Systems (CHI)</span>
+                        <span class="service-role">Reviewer · 2026</span>
+                    </li>
+                    <li class="service-item">
+                        <span class="service-venue">IEEE Transactions on Intelligent Transportation Systems</span>
+                        <span class="service-role">Reviewer · 2025</span>
+                    </li>
+                </ul>
+
+                <footer class="footer">
+                    <div class="visitor-map">
                         <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffc107&w=a&t=tt&d=u2BTJYqdbFLolUujfD3E63Q5xzFRgJDz95ZLJaF3Vx4&co=ffffff&cmo=3acc3a&cmn=ff5353&ct=808080'></script>
                     </div>
-                </div>
+                </footer>
 
-			</div>
-			<div class="col-md-3 fixed-column" style="margin-top:6em;">
+			</main>
+			<aside class="profile" aria-label="Profile">
 				<div class="row mt-4 mb-4">
 					<div class="col-12">
 						<img class="rounded-lg img-fluid mx-auto"
-							 src="assets/haoyang_profile.jpg">
+							 src="assets/haoyang-with-cat.png" alt="Haoyang Chen with a cat resting on his shoulder" width="1024" height="1536">
 					</div>
 				</div>
-				<h4 class="text-dark text-center">Haoyang Chen</h4>
+				<h1 class="text-dark text-center">Haoyang Chen</h1>
 
 				<p class="mb-4 text-secondary text-center">
 					PhD Student
@@ -283,7 +281,7 @@
 				<div class="row text-center">
 					<div class="col-12">
 						<i class="far fa-envelope"></i>
-						<a class="text-dark">Chen_Haoyang@u.nus.edu</a>
+						<a class="text-dark" href="mailto:Chen_Haoyang@u.nus.edu">Chen_Haoyang@u.nus.edu</a>
 <!--						<br>-->
 <!--						<a class="text-dark">hy_chen@seu.edu.cn</a>-->
 					</div>
@@ -291,39 +289,26 @@
 				<br>
 				<div class="row justify-content-center text-center">
 					<div class="col-11">
-						<a href="https://www.linkedin.com/in/chen-hy" target="_blank">
+						<a href="https://www.linkedin.com/in/chen-hy" target="_blank" rel="noopener noreferrer">
 							<img src="assets/linkedin.png" alt="LinkedIn Profile" width=30 height=30>
 						</a>
-						<a href="https://github.com/Haoyang-Chen" target="_blank">
-							<img src="assets/github.png" alt="github" width=30 height=30>
+						<a href="https://github.com/Haoyang-Chen" target="_blank" rel="noopener noreferrer">
+							<img src="assets/github.png" alt="GitHub profile" width=30 height=30>
 						</a>
-						<a href="assets/CV_Haoyang_CHEN_eng.pdf" target="_blank">
-							<img src="assets/cv.png" alt="cv" width=30 height=30>
+						<a href="assets/CV_Haoyang_CHEN_eng.pdf" target="_blank" rel="noopener noreferrer">
+							<img src="assets/cv.png" alt="Curriculum vitae (PDF)" width=30 height=30>
 						</a>
 					</div>
 				</div>
-			</div>
+			</aside>
 
 			</div>
 		</div>
 
 
 
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-		integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-		crossorigin="anonymous">
-	</script>
-	<script
-		src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-		integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-		crossorigin="anonymous">
-	</script>
-	<script
-		src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-		integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-		crossorigin="anonymous">
-	</script>
-
+    <script src="image-preview.js"></script>
+    <script src="navigation.js"></script>
 	</body>
 
 </html>
