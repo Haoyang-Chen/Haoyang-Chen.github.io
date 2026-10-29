@@ -6,6 +6,24 @@
   let enterTimer;
   let leaveTimer;
 
+  // The source image can extend beyond a cropped thumbnail. Start from its
+  // actual position and clipping window, then reveal the unchanged full figure.
+  function thumbnailFrame(image, width, left, top) {
+    const rect = image.getBoundingClientRect();
+    const crop = image.closest('.project-crop')?.getBoundingClientRect() || rect;
+    const percent = value => Math.max(0, Math.min(100, value));
+    const insets = [
+      percent((crop.top - rect.top) / rect.height * 100),
+      percent((rect.right - crop.right) / rect.width * 100),
+      percent((rect.bottom - crop.bottom) / rect.height * 100),
+      percent((crop.left - rect.left) / rect.width * 100)
+    ];
+    return {
+      transform: `translate(${rect.left - left}px, ${rect.top - top}px) scale(${rect.width / width})`,
+      clipPath: `inset(${insets.map(value => `${value}%`).join(' ')})`
+    };
+  }
+
   function close(immediate = false) {
     clearTimeout(enterTimer);
     clearTimeout(leaveTimer);
@@ -17,11 +35,11 @@
     current.trigger.classList.remove('is-growing');
     if (document.activeElement === current.preview) current.trigger.focus({ preventScroll: true });
     current.preview.style.pointerEvents = 'none';
-    const rect = current.image.getBoundingClientRect();
-    const scale = Math.min(rect.width / current.width, rect.height / current.height);
-    const x = rect.left + (rect.width - current.width * scale) / 2;
-    const y = rect.top + (rect.height - current.height * scale) / 2;
-    current.preview.style.transform = `translate(${x - current.left}px, ${y - current.top}px) scale(${scale})`;
+    if (current.preview.style.clipPath === 'none') {
+      current.preview.style.clipPath = 'inset(0% 0% 0% 0%)';
+      current.preview.getBoundingClientRect();
+    }
+    Object.assign(current.preview.style, thumbnailFrame(current.image, current.width, current.left, current.top));
     current.preview.style.boxShadow = 'none';
     const remove = () => {
       current.preview.remove();
@@ -47,7 +65,7 @@
     close(true);
     const image = trigger.querySelector('img');
     if (!image.naturalWidth) return;
-    const rect = image.getBoundingClientRect();
+    const rect = image.closest('.project-crop')?.getBoundingClientRect() || image.getBoundingClientRect();
     const margin = 16;
     const ratio = image.naturalWidth / image.naturalHeight;
     const width = Math.min(1100, document.documentElement.clientWidth - margin * 2,
@@ -55,9 +73,6 @@
     const height = width / ratio;
     const left = Math.max(margin, Math.min(rect.left, document.documentElement.clientWidth - width - margin));
     const top = Math.max(margin, Math.min(rect.top, window.innerHeight - height - margin));
-    const scale = Math.min(rect.width / width, rect.height / height);
-    const x = rect.left + (rect.width - width * scale) / 2;
-    const y = rect.top + (rect.height - height * scale) / 2;
     const preview = document.createElement('button');
     preview.type = 'button';
     preview.className = 'image-preview';
@@ -66,10 +81,11 @@
     const enlarged = image.cloneNode();
     enlarged.removeAttribute('loading');
     enlarged.removeAttribute('class');
+    enlarged.removeAttribute('style');
     preview.append(enlarged);
     Object.assign(preview.style, {
       left: `${left}px`, top: `${top}px`, width: `${width}px`, height: `${height}px`,
-      transform: `translate(${x - left}px, ${y - top}px) scale(${scale})`,
+      ...thumbnailFrame(image, width, left, top),
       boxShadow: 'none'
     });
     document.body.append(preview);
@@ -78,11 +94,19 @@
     const current = { trigger, image, preview, width, height, left, top, pinned: false };
     active = current;
     if (pinned) pin();
+    preview.addEventListener('transitionend', event => {
+      if ((event.propertyName === 'transform' || event.propertyName === 'clip-path') && active === current) {
+        // The crop is only needed while growing; remove it so the full figure's
+        // shadow can extend beyond its bounds once the animation finishes.
+        preview.style.clipPath = 'none';
+      }
+    });
     // Commit the thumbnail-sized starting frame before growing it in place.
     preview.getBoundingClientRect();
     requestAnimationFrame(() => {
       if (active !== current) return;
       preview.style.transform = 'translate(0, 0) scale(1)';
+      preview.style.clipPath = reducedMotion.matches ? 'none' : 'inset(0% 0% 0% 0%)';
       preview.style.boxShadow = '';
     });
     preview.addEventListener('pointerenter', () => clearTimeout(leaveTimer));

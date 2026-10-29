@@ -14,7 +14,7 @@
 		href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
 		integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
 		crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="style.css?v=20261029-full-figures">
 </head>
 
 <body>
@@ -73,7 +73,7 @@
 							<br>
 							<span class="font-italic"> <span class="font-weight-bold">H Chen</span>, J Bai, T Fang, B Lim</span>
 							<br>
-							<a class="norm" href="assets/Editable_XAI%20paper.pdf" target="_blank" rel="noopener noreferrer">PDF</a> <a class="norm" href="https://github.com/Haoyang-Chen/EditableXAI" target="_blank" rel="noopener noreferrer">Code</a>
+							<a class="norm" href="editable-xai/">Project page</a> <a class="norm" href="assets/Editable_XAI%20paper.pdf" target="_blank" rel="noopener noreferrer">PDF</a> <a class="norm" href="https://github.com/Haoyang-Chen/EditableXAI" target="_blank" rel="noopener noreferrer">Code</a>
 						</div>
 
 					</dd>
@@ -107,114 +107,63 @@
 				</dl>
 
 				<h2 class="mt-4" id="Research">Research Projects</h2>
-                <article class="research-project">
-                    <h3>Editable XRL: Toward Bidirectional Human–Agent Alignment of Rational Decision-Making with Markov Tree Explanations</h3>
-                    <div class="project-layout">
-                        <!-- Figure 3 from the user-provided Editable XRL manuscript, page 9. -->
-                        <button class="project-image" type="button" aria-expanded="false"><img src="assets/images/editable-xrl-workflow.png" alt="CoChoice's Read–Revise–Reinforce workflow, with Markov decision trees and the Actor, World Model, and Critic" loading="lazy" width="1056" height="744"></button>
+                <div class="project-grid">
+                    <article class="research-project">
+                        <button class="project-image project-image--xrl" type="button" aria-expanded="false" title="View complete figure"><img src="assets/images/editable-xrl-workflow.png" alt="CoChoice's Read–Revise–Reinforce workflow, with Markov decision trees and the Actor, World Model, and Critic" loading="lazy" width="1056" height="744"></button>
                         <div class="project-description">
-                            <p>CoChoice helps people understand and guide reinforcement-learning agents through editable Markov decision trees. Its Read–Revise–Reinforce workflow connects an agent’s actions, predicted consequences, and values, then turns users’ corrections into guidance for continued learning.</p>
-                            <details class="project-details">
-                                <summary>More details</summary>
-                                <p><strong>Read:</strong> Compare action choices, possible outcomes, and expected values in a Markov decision tree grounded in the agent’s Actor, World Model, and Critic.</p>
-                                <p><strong>Revise:</strong> Edit action probabilities, outcome likelihoods, or values. CoChoice translates these corrections into supervised training targets for the corresponding model components.</p>
-                                <p><strong>Reinforce:</strong> Continue reinforcement learning while retaining user edits as training constraints, balancing task performance with human alignment. Users can inspect the updated explanation and repeat the cycle.</p>
-                                <p>In a study with 39 participants collaborating with an agent in Overcooked, CoChoice improved user understanding and alignment compared with read-only and manually editable explanations. Stakeholder interviews explored opportunities in transportation, medicine, and cognitive modeling. The work introduces Editable XRL as a paradigm for bidirectional human–agent alignment.</p>
-                            </details>
+                            <h3 title="Editable XRL: Toward Bidirectional Human–Agent Alignment of Rational Decision-Making with Markov Tree Explanations"><a href="editable-xrl/">Editable XRL</a></h3>
+                            <p>CoChoice makes an RL agent’s actions, predictions, and values editable through Markov trees. Corrections guide continued learning, helping people and agents coordinate their roles.</p>
+                            <div class="project-links"><a class="norm" href="editable-xrl/">Project page</a></div>
                         </div>
-                    </div>
-                </article>
-                <article class="research-project">
-                    <h3>Trellis: Interpretable DAG Scaffolding for Non-Linear LLM-Assisted Sensemaking</h3>
-                    <div class="project-layout">
-                        <!-- Figure 1 from the user-provided Trellis manuscript, page 1. -->
-                        <button class="project-image" type="button" aria-expanded="false"><img src="assets/images/trellis-overview.png" alt="Trellis transforms a linear conversation into a graph workspace with branching, merging, context briefs, and structural refactoring" loading="lazy" width="2000" height="896"></button>
+                    </article>
+                    <article class="research-project">
+                        <button class="project-image project-image--trellis" type="button" aria-expanded="false" title="View complete figure"><img src="assets/images/trellis-overview.png" alt="Trellis transforms a linear conversation into a graph workspace with branching, merging, context briefs, and structural refactoring" loading="lazy" width="2000" height="896"></button>
                         <div class="project-description">
-                            <p>Trellis turns LLM conversations into an interactive graph workspace for non-linear sensemaking. People can branch into alternative lines of inquiry, merge complementary insights, and reorganize their reasoning while controlling the context available to the LLM.</p>
-                            <details class="project-details">
-                                <summary>More details</summary>
-                                <p><strong>Branch and merge:</strong> Break open-ended problems into parallel explorations, then consolidate complementary ideas. A directed acyclic graph makes conversation turns and inherited context explicit.</p>
-                                <p><strong>Maintain an overview:</strong> AI-generated context briefs summarize evolving lines of inquiry, helping users keep track of the larger task while exploring individual branches.</p>
-                                <p><strong>Refactor the structure:</strong> Preview, accept, or reject bounded AI suggestions for reorganizing the graph and clarifying relationships between ideas.</p>
-                                <p>A user study found Trellis helpful for exploring alternatives, managing divergent hypotheses, integrating ideas across branches, and maintaining global task awareness. The project explores how interpretable, user-controlled context structures can support iterative sensemaking with LLMs.</p>
-                            </details>
+                            <h3 title="Trellis: Interpretable DAG Scaffolding for Non-Linear LLM-Assisted Sensemaking"><a href="trellis/">Trellis</a></h3>
+                            <p>An interactive graph workspace for LLM-assisted sensemaking. People can branch into alternatives, merge insights, and reorganize conversations while controlling the context available to the model.</p>
+                            <div class="project-links"><a class="norm" href="trellis/">Project page</a></div>
                         </div>
-                    </div>
-                </article>
-                <article class="research-project">
-                    <h3>TreePINN: Tree Prior Initialized Neural Network</h3>
-                    <div class="project-layout">
-                        <!-- Figure 1 from the user-provided TreePINN manuscript, page 3. -->
-                        <button class="project-image" type="button" aria-expanded="false"><img src="assets/images/treepinn-overview.png" alt="TreePINN maps a fitted decision tree into a sparse neural network with soft conditions, path layers, and prediction outputs" loading="lazy" width="960" height="612"></button>
+                    </article>
+                    <article class="research-project">
+                        <button class="project-image project-image--treepinn" type="button" aria-expanded="false" title="View complete figure"><img src="assets/images/treepinn-overview.png" alt="TreePINN maps a fitted decision tree into a sparse neural network with soft conditions, path layers, and prediction outputs" loading="lazy" width="960" height="612"></button>
                         <div class="project-description">
-                            <p>TreePINN converts fitted decision trees into trainable neural networks, using their structure, split rules, leaf predictions, and node statistics as an informed starting point. A learned Route-State carries earlier decision context into later routing, allowing end-to-end training to adapt beyond the original tree partition.</p>
-                            <details class="project-details">
-                                <summary>More details</summary>
-                                <p><strong>Tree-based initialization:</strong> A sparse neural backbone follows the source tree’s depth and parent–child structure. Soft split conditions and partial decision paths transfer its rules, while leaf predictions initialize the output.</p>
-                                <p><strong>Calibrated split softness:</strong> Feature margins, sample support, and impurity reduction determine how decisively each split behaves at initialization, giving less reliable rules greater flexibility.</p>
-                                <p><strong>Path-dependent adaptation:</strong> Route-State passes context along the tree’s edges and learns adjustments to downstream decisions. Its routing adjustment starts at zero, preserving the tree-derived initial predictor before training.</p>
-                                <p>Evaluation spans eight classification and regression datasets in single-tree and random-forest settings. TreePINN performs comparably to or better than competing tree-informed methods on most evaluated tasks, with additional analyses of limited-data learning, source-tree fidelity, and distilled-tree complexity.</p>
-                            </details>
+                            <h3 title="TreePINN: Tree Prior Initialized Neural Network">TreePINN</h3>
+                            <p>Turns fitted decision trees into trainable neural networks. Tree structure and rules initialize the model; a learned Route-State carries earlier decision context into later routing.</p>
                         </div>
-                    </div>
-                </article>
-                <article class="research-project">
-                    <h3>Editable XAI: Toward Bidirectional Human-AI Alignment with Co-Editable Explanations of Interpretable Attributes</h3>
-                    <div class="project-layout">
-                        <button class="project-image" type="button" aria-expanded="false"><img src="assets/images/EditableXAI.png" alt="Editable XAI: Toward Bidirectional Human-AI Alignment with Co-Editable Explanations of Interpretable Attributes — project illustration" loading="lazy" width="1741" height="948"></button>
+                    </article>
+                    <article class="research-project">
+                        <button class="project-image project-image--xai" type="button" aria-expanded="false" title="View complete figure"><img src="assets/images/EditableXAI.png" alt="Editable XAI: Toward Bidirectional Human-AI Alignment with Co-Editable Explanations of Interpretable Attributes — project illustration" loading="lazy" width="1741" height="948"></button>
                         <div class="project-description">
-                            <p>CoExplain lets people edit explanations through rules on interpretable attributes, helping them understand and improve AI alignment. A study with 43 participants found improvements in understanding and alignment compared with read-only explanations.</p>
-                            <details class="project-details">
-                                <summary>More details</summary>
-                                <p>While Explainable AI (XAI) helps users understand AI decisions, misalignment in domain knowledge can lead to disagreement. This inconsistency hinders understanding, and because explanations are often read-only, users lack the control to improve alignment. We propose making XAI editable, allowing users to write rules to improve control and gain deeper understanding through the generation effect of active learning. We developed CoExplain, leveraging a neural network for universal representation and symbolic rules for intuitive reasoning on interpretable attributes. CoExplain explains the neural network with a faithful proxy decision tree, parses user-written rules as an equivalent neural network graph, and collaboratively optimizes the decision tree. In a user study (N=43), CoExplain and manually editable XAI improved user understanding and model alignment compared to read-only XAI. CoExplain was easier to use with fewer edits and less time. This work contributes Editable XAI for bidirectional AI alignment, improving understanding and control.</p>
-                                <div class="project-links"><a class="norm" href="https://github.com/Haoyang-Chen/EditableXAI" target="_blank" rel="noopener noreferrer">Code</a></div>
-                            </details>
+                            <div class="project-heading"><h3 title="Editable XAI: Toward Bidirectional Human-AI Alignment with Co-Editable Explanations of Interpretable Attributes"><a href="editable-xai/">Editable XAI</a></h3><span class="project-venue">CHI 2026</span></div>
+                            <p>CoExplain lets people revise explanations through rules on interpretable attributes. A study with 43 participants found improvements in understanding and alignment compared with read-only explanations.</p>
+                            <div class="project-links"><a class="norm" href="editable-xai/">Project page</a> <a class="norm" href="assets/Editable_XAI%20paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a> <a class="norm" href="https://github.com/Haoyang-Chen/EditableXAI" target="_blank" rel="noopener noreferrer">Code</a></div>
                         </div>
-                    </div>
-                </article>
-                <article class="research-project">
-                    <h3>i-Rebalance: Personalized Vehicle Repositioning for Supply Demand Balance</h3>
-                    <div class="project-layout">
-                        <!-- Figure 2, page 3 of assets/i_Rebalance%20paper.pdf; rendered with all PDF labels. -->
-                        <button class="project-image" type="button" aria-expanded="false"><img src="assets/images/irebalance-overview.png" alt="i-Rebalance overview: driver behavior modeling and sequential vehicle repositioning with Grid and Vehicle agents" loading="lazy" width="1980" height="532"></button>
+                    </article>
+                    <article class="research-project">
+                        <button class="project-image project-image--irebalance" type="button" aria-expanded="false" title="View complete figure"><img src="assets/images/irebalance-overview.png" alt="i-Rebalance overview: driver behavior modeling and sequential vehicle repositioning with Grid and Vehicle agents" loading="lazy" width="1980" height="532"></button>
                         <div class="project-description">
-                            <p>i-Rebalance personalizes ride-hailing vehicle repositioning by combining driver preference prediction, a driver decision model, and dual-agent reinforcement learning. A field study with 106 professional drivers highlighted the importance of considering their preferences.</p>
-                            <details class="project-details">
-                                <summary>More details</summary>
-                                <p>Traditional vehicle reposition techniques used in ride-hailing contexts turn out to have little effect due to their ignorance on drivers' preference and response behaviors. This project first demonstrates that drivers do have personalized cruising preferences and carried out experiments to prove it necessary to consider drivers' preference when repositioning. Our on-field User Study of 106 professional drivers further stressed that drivers do have preference and their preference is a key factor in their decision making process of whether to accept a reposition or not. Made up with three key modules: an LSTM predictor of drivers' preferences, a decision model on drivers and a dual-agent DRL framework, our solution can both satisfy driver preferences and demand-supply gap.</p>
-                                <div class="project-links"><a class="norm" href="https://github.com/Haoyang-Chen/I-Rebalance" target="_blank" rel="noopener noreferrer">Code</a></div>
-                            </details>
+                            <div class="project-heading"><h3 title="i-Rebalance: Personalized Vehicle Repositioning for Supply Demand Balance">i-Rebalance</h3><span class="project-venue">AAAI 2024</span></div>
+                            <p>Personalizes ride-hailing vehicle repositioning using driver preferences, response modeling, and reinforcement learning. A field study with 106 professional drivers informed the design.</p>
+                            <div class="project-links"><a class="norm" href="assets/i_Rebalance%20paper.pdf" target="_blank" rel="noopener noreferrer">Paper</a> <a class="norm" href="https://github.com/Haoyang-Chen/I-Rebalance" target="_blank" rel="noopener noreferrer">Code</a></div>
                         </div>
-                    </div>
-                </article>
-                <article class="research-project">
-                    <h3>Modularized Interpretable Medical Decision Support System with Visual Programming</h3>
-                    <div class="project-layout">
-                        <button class="project-image" type="button" aria-expanded="false"><img src="assets/images/ECG_XAI.png" alt="Modularized Interpretable Medical Decision Support System with Visual Programming — project illustration" loading="lazy" width="2008" height="1524"></button>
+                    </article>
+                    <article class="research-project">
+                        <button class="project-image project-image--medical" type="button" aria-expanded="false" title="View complete figure"><img src="assets/images/ECG_XAI.png" alt="Modularized Interpretable Medical Decision Support System with Visual Programming — project illustration" loading="lazy" width="2008" height="1524"></button>
                         <div class="project-description">
-                            <p>A visual programming toolkit lets doctors customize interpretable diagnostic models around their individual preferences, including examination sequences and thresholds. The project explores more flexible, understandable medical decision support.</p>
-                            <details class="project-details">
-                                <summary>More details</summary>
-                                <p>Current medical decision support systems (MDSS) provide fixed guidelines to doctors, while each doctor has an individual approach to diagnosis, e.g. thresholds of indexes, sequence of examinations. Existing medical prediction tools also offer poor interpretability which is confusing to doctors. This project focuses on enabling doctors to build diagnostic models with their individual preference. With our toolkit, doctors can use visual programming to customize a prediction model that is highly interpretable and precise in practice.</p>
-                                <div class="project-links"><a class="norm" href="https://github.com/Haoyang-Chen/rapidminer-extension-ECG_XAI" target="_blank" rel="noopener noreferrer">RapidMiner extension</a> <a class="norm" href="https://github.com/Haoyang-Chen/RuleBuilder" target="_blank" rel="noopener noreferrer">RuleBuilder</a></div>
-                            </details>
+                            <h3 title="Modularized Interpretable Medical Decision Support System with Visual Programming">Interpretable Medical Decision Support</h3>
+                            <p>A visual programming toolkit for customizable diagnostic models. Doctors can express their preferred examination sequences and thresholds in an interpretable model.</p>
+                            <div class="project-links"><a class="norm" href="https://github.com/Haoyang-Chen/rapidminer-extension-ECG_XAI" target="_blank" rel="noopener noreferrer">RapidMiner extension</a> <a class="norm" href="https://github.com/Haoyang-Chen/RuleBuilder" target="_blank" rel="noopener noreferrer">RuleBuilder</a></div>
                         </div>
-                    </div>
-                </article>
-                <article class="research-project">
-                    <h3>Ear Motion Tracking System for VR Devices</h3>
-                    <div class="project-layout">
-                        <button class="project-image" type="button" aria-expanded="false"><img src="assets/images/earmotion.png" alt="Ear Motion Tracking System for VR Devices — project illustration" loading="lazy" width="978" height="704"></button>
+                    </article>
+                    <article class="research-project">
+                        <button class="project-image project-image--ear" type="button" aria-expanded="false" title="View complete figure"><img src="assets/images/earmotion.png" alt="Ear Motion Tracking System for VR Devices — project illustration" loading="lazy" width="978" height="704"></button>
                         <div class="project-description">
-                            <p>An ear-motion input system explores more accessible interaction with VR devices. A study with 15 volunteers found the approach effective and easy to use.</p>
-                            <details class="project-details">
-                                <summary>More details</summary>
-                                <p>Virtual Reality is trending, while there are devices like Xbox Adaptive Controller to provide accessibility for the people in need, they are still hard to use in VR context because people cannot see through a VR Headset. When people have to click a button, they can hardly find it without seeing it. This project detects ear motion and uses it as an input to the VR devices as a replacement of traditional controllers to provide accessibility to the people with special needs. Our user study on 15 volunteers showed that this method is effective and easy to use. This device gives everyone the access to control a VR device, even if they are not good at moving their ears.</p>
-                                <div class="project-links"><a class="norm" href="https://github.com/Romi-plus-plus/Med" target="_blank" rel="noopener noreferrer">Code</a></div>
-                            </details>
+                            <h3 title="Ear Motion Tracking System for VR Devices">Ear Motion for VR</h3>
+                            <p>An ear-motion input system for accessible interaction with VR devices. A study with 15 volunteers found the approach effective and easy to use.</p>
+                            <div class="project-links"><a class="norm" href="https://github.com/Romi-plus-plus/Med" target="_blank" rel="noopener noreferrer">Code</a></div>
                         </div>
-                    </div>
-                </article>
+                    </article>
+                </div>
 
                 <h2 class="mt-4" id="Teaching">Teaching</h2>
                 <p class="teaching-institution">National University of Singapore</p>
@@ -271,7 +220,7 @@
 							 src="assets/haoyang-with-cat.png" alt="CHEN Haoyang 陈昊阳 with a cat resting on his shoulder" width="1024" height="1536">
 					</div>
 				</div>
-				<h1 class="text-dark text-center">CHEN Haoyang 陈昊阳</h1>
+				<h1 class="text-dark text-center">CHEN Haoyang <span lang="zh">陈昊阳</span></h1>
 
 				<p class="mb-4 text-secondary text-center">
 					PhD Student
@@ -307,7 +256,7 @@
 
 
 
-    <script src="image-preview.js"></script>
+    <script src="image-preview.js?v=20261029-crops-3"></script>
     <script src="navigation.js"></script>
 	</body>
 
