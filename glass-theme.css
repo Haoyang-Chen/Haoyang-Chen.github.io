@@ -1,0 +1,13 @@
+/* Theme-color atmosphere belongs to the whole page, rather than one section. */
+:root { --theme-rgb: 153, 99, 74; }
+body {
+ background-color: var(--paper);
+ background-image:
+  radial-gradient(ellipse 78% 14% at 95% 2%, rgba(var(--theme-rgb), .10), transparent 80%),
+  radial-gradient(ellipse 86% 17% at 0% 24%, rgba(var(--theme-rgb), .085), transparent 82%),
+  radial-gradient(ellipse 78% 18% at 100% 49%, rgba(var(--theme-rgb), .11), transparent 82%),
+  radial-gradient(ellipse 86% 18% at 0% 72%, rgba(var(--theme-rgb), .085), transparent 82%),
+  radial-gradient(ellipse 82% 15% at 100% 98%, rgba(var(--theme-rgb), .09), transparent 82%);
+ background-repeat: no-repeat;
+}
+@media (prefers-reduced-transparency: reduce), (forced-colors: active) { body { background-image: none; } }
