@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Editable XRL connects an agent’s actions, predicted consequences, and values in an editable Markov tree. Explore CoChoice, its collaboration study, and probes in transportation, medicine, and cognitive modeling.">
+  <meta name="theme-color" content="#fdfcf9">
+  <title>Editable XRL · CoChoice</title>
+  <link rel="canonical" href="https://haoyang-chen.github.io/editable-xrl/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Editable XRL · CoChoice">
+  <meta property="og:description" content="Understand and revise an agent’s actions, predictions, and values. Explore the CoChoice method, guided demonstration, and research findings.">
+  <meta property="og:url" content="https://haoyang-chen.github.io/editable-xrl/">
+  <meta property="og:image" content="https://haoyang-chen.github.io/assets/images/editable-xrl-workflow.png">
+  <meta property="og:image:alt" content="CoChoice’s Read–Revise–Reinforce workflow connects editable Markov trees to continued learning.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="project.css">
+  <link rel="stylesheet" href="walkthrough.css">
+  <script src="project.js" defer></script>
+  <script src="walkthrough.js" defer></script>
+  <link rel="stylesheet" href="../glass-theme.css?v=1">
+  <link rel="stylesheet" href="../assets/styles/project-glass.css?v=1">
+  <script src="../assets/scripts/project-glass.js?v=1" defer></script>
+</head>
+<body class="project-preview project-preview--editable-xrl">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="wordmark" href="#main">Editable <span>XRL</span></a>
+      <nav aria-label="Project navigation">
+        <a href="#idea">Method</a>
+        <a href="#workflow">Demo</a>
+        <a href="#findings">Findings</a>
+        <a href="#domains">Domains</a>
+      </nav>
+      <a class="home-link" href="../glass.html#Research"><span class="home-name">CHEN Haoyang <span lang="zh">陈昊阳</span></span><span class="home-short">Homepage</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Editable explanations for reinforcement learning</p>
+        <h1 id="hero-title">Editable <span>XRL</span></h1>
+        <p class="hero-statement">Edit an agent’s actions, predictions, and values.</p>
+        <p class="hero-description"><strong>CoChoice</strong> connects these parts of a decision in an editable Markov tree. People can reconsider their own expectations, correct the agent’s reasoning, and retain those corrections as it continues learning.</p>
+        <div class="hero-actions">
+          <a class="button button-dark" href="#guided-demo">Follow the demonstration</a>
+          <a class="text-link" href="#domains">Explore the domain probes</a>
+        </div>
+        <p class="hero-scope">Collaboration · Transportation · Medicine · Cognitive modeling</p>
+      </div>
+      <figure class="hero-figure">
+        <div class="figure-heading"><span>The CoChoice workflow</span><span>Read · Revise · Reinforce</span></div>
+        <button class="figure-button" type="button" data-zoom aria-label="Enlarge the Read–Revise–Reinforce workflow">
+          <img src="../assets/images/editable-xrl-workflow.png" width="1056" height="744" alt="CoChoice's Read, Revise, and Reinforce stages connect a Markov decision tree to the Actor, World Model, and Critic.">
+          <span class="figure-hint" aria-hidden="true">View larger</span>
+        </button>
+        <figcaption>A tree edit becomes supervision for the Actor, World Model, or Critic. Continued learning retains that guidance alongside the task objective.</figcaption>
+      </figure>
+      <aside class="hero-finding" aria-label="Key research finding">
+        <div><p class="eyebrow">What the study reveals</p><a href="#findings">39-person collaboration study</a></div>
+        <p><strong>People could predict the AI, yet still had to work around it.</strong> Reading explanations often left people adjusting their own role. Retaining edits during learning supported both understanding and the intended division of work.</p>
+      </aside>
+    </section>
+
+    <section class="idea-section" id="idea" aria-labelledby="idea-title">
+      <div class="shell">
+        <div class="section-intro">
+          <p class="eyebrow">01 / Method</p>
+          <h2 id="idea-title">Where does the disagreement come from?</h2>
+          <p>A choice depends on the action, the consequences the agent expects, and the value it assigns to those consequences. CoChoice makes all three inspectable and editable.</p>
+        </div>
+        <div class="concepts">
+          <article>
+            <p class="concept-label">01 · Behavior</p>
+            <h3>What might it do?</h3>
+            <p>Compare possible actions and their probabilities. Revise the distribution to express a preferred choice.</p>
+            <span class="model-label">Behavior edits guide the Actor</span>
+          </article>
+          <article>
+            <p class="concept-label">02 · Belief</p>
+            <h3>What does it expect?</h3>
+            <p>Inspect predicted consequences, including a partner’s response. Correct an expectation that conflicts with your knowledge.</p>
+            <span class="model-label">Belief edits guide the World Model</span>
+          </article>
+          <article>
+            <p class="concept-label">03 · Benefit</p>
+            <h3>What does it value?</h3>
+            <p>Compare the values assigned to outcomes. Revise an evaluation to express what makes an outcome desirable.</p>
+            <span class="model-label">Benefit edits guide the Critic</span>
+          </article>
+        </div>
+        <p class="concept-footnote">The tree provides a shared basis for reconsideration and correction. Edits become supervision for the corresponding model components; further reinforcement learning retains that guidance alongside the task objective.</p>
+      </div>
+    </section>
+
+    <section class="workflow-section shell" id="workflow" aria-labelledby="workflow-title">
+      <div class="section-intro">
+        <p class="eyebrow">02 / Guided demonstration</p>
+        <h2 id="workflow-title">Walk through a role mismatch.</h2>
+        <p>One cooking decision, seen through the agent’s choices, expectations, and values.</p>
+      </div>
+      <div class="guided-demo" id="guided-demo">
+        <nav class="guide-steps" aria-label="Demonstration steps" hidden data-guide-enhanced>
+          <button type="button" data-guide-step="0" aria-label="Step 1: The mismatch" aria-current="step" aria-controls="guide-scene"><span>01</span><span class="guide-step-name">The mismatch</span></button>
+          <button type="button" data-guide-step="1" aria-label="Step 2: Read" aria-controls="guide-scene"><span>02</span><span class="guide-step-name">Read</span></button>
+          <button type="button" data-guide-step="2" aria-label="Step 3: Revise" aria-controls="guide-scene"><span>03</span><span class="guide-step-name">Revise</span></button>
+          <button type="button" data-guide-step="3" aria-label="Step 4: Inspect" aria-controls="guide-scene"><span>04</span><span class="guide-step-name">Inspect</span></button>
+          <button type="button" data-guide-step="4" aria-label="Step 5: Reinforce" aria-controls="guide-scene"><span>05</span><span class="guide-step-name">Reinforce</span></button>
+        </nav>
+        <div id="guide-scene">
+          <div class="guide-story" aria-live="polite" aria-atomic="true">
+            <div><p class="eyebrow" id="guide-kicker">01 / The mismatch</p><h3 id="guide-title">You take the onions. The AI should serve.</h3></div>
+            <p id="guide-description">You are the green chef. You want the blue AI to handle dishes and soup. But it favors collecting onions, with a 68% probability—so both partners want the same job.</p>
+          </div>
+          <figure class="guide-figure" id="guide-figure">
+            <div class="guide-figure-toolbar"><span id="guide-figure-label">The agent’s original explanation</span><button type="button" data-zoom data-zoom-image="guide-source-image" aria-label="Enlarge the demonstration source figure">View full figure</button></div>
+            <div class="guide-viewport" id="guide-viewport">
+              <div class="guide-camera" id="guide-camera">
+                <img id="guide-source-image" src="assets/cochoice-interface.png" width="1540" height="710" alt="CoChoice's original kitchen explanation: the blue AI favors onion pickup at 68 percent and dish pickup at 32 percent; the green human's predicted responses follow each branch." loading="lazy">
+                <span class="guide-target guide-target-onion" aria-hidden="true">10%</span>
+                <span class="guide-target guide-target-dish" aria-hidden="true">90%</span>
+                <span class="guide-spotlight" id="guide-spotlight" aria-hidden="true"></span>
+              </div>
+            </div>
+            <div class="guide-learning" id="guide-learning" hidden>
+              <img id="guide-learning-image" src="../assets/images/editable-xrl-workflow.png" width="1056" height="744" alt="The CoChoice workflow retains edits to the Actor, World Model, and Critic as the agent continues learning." loading="lazy">
+              <div class="guide-observations">
+                <p class="eyebrow">What participants observed</p>
+                <blockquote><span>After Revise</span><p>“Taking the plate was expected, but then not going to take the soup was not expected … they just took the plate.”</p><cite>Revise11 · manuscript §6.2.2</cite></blockquote>
+                <blockquote><span>After Reinforce</span><p>“It picked up the dish, picked up the soup, and served soup.”</p><cite>Reinforce13 · manuscript §6.2.3</cite></blockquote>
+              </div>
+            </div>
+            <figcaption id="guide-figure-caption">Figure 4 · The blue agent and green human currently anticipate different divisions of work.</figcaption>
+          </figure>
+          <div class="guide-evidence" id="guide-evidence">
+            <div><span id="guide-fact-label-1">Your intended role</span><strong id="guide-fact-1">Collect onions</strong></div>
+            <div><span id="guide-fact-label-2">AI’s current preference</span><strong id="guide-fact-2">68% onion pickup</strong></div>
+            <p id="guide-takeaway">The explanation makes the competing intentions visible before you make a correction.</p>
+          </div>
+        </div>
+        <div class="guide-controls" hidden data-guide-enhanced>
+          <button type="button" class="guide-back" id="guide-back" disabled>Previous</button>
+          <span id="guide-progress" aria-live="off">1 of 5</span>
+          <button type="button" class="button button-dark" id="guide-next">Read its expectation</button>
+        </div>
+      </div>
+      <p class="walkthrough-note">Illustration based on Figures 3–4. The edit is a training target; the final step presents separate observations from the study (§6.2).</p>
+    </section>
+
+    <section class="findings-section" id="findings" aria-labelledby="findings-title">
+      <div class="shell">
+        <div class="findings-heading">
+          <div class="section-intro"><p class="eyebrow">03 / Collaboration study</p><h2 id="findings-title">From accommodating the agent to coordinating with it.</h2><p>In a randomized, between-subjects study, people collaborated with an AI in Overcooked. Three conditions compared reading explanations, revising them, and retaining edits during continued learning.</p></div>
+          <div class="study-size"><strong>39</strong><span>participants<br>across three conditions</span></div>
+        </div>
+        <div class="condition-stories">
+          <article><span class="eyebrow">Read</span><h3>Adapting to the agent</h3><p>Explanations helped people anticipate the agent. But people often changed their own role to work around it.</p></article>
+          <article><span class="eyebrow">Revise</span><h3>Expressing an intended role</h3><p>Edits enabled targeted corrections. Picking up a dish did not always extend into completing the serving role.</p></article>
+          <article><span class="eyebrow">Reinforce</span><h3>Coordinating together</h3><p>Continued learning supported role continuation beyond edited decisions, alongside high user understanding.</p></article>
+        </div>
+        <div class="results-table-wrap">
+          <table aria-describedby="results-note">
+            <caption>Understanding and role fulfillment</caption>
+            <thead><tr><th scope="col">Measure</th><th scope="col">Read</th><th scope="col">Revise</th><th scope="col">Reinforce</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Human understanding of AI<small>Accuracy in predicting the agent’s intention</small></th><td>91.9%</td><td>49.6%</td><td>93.8%</td></tr>
+              <tr><th scope="row">Human role fulfillment<small>Maintaining the assigned onion-collection role</small></th><td>19.7%</td><td>75.8%</td><td>95.6%</td></tr>
+              <tr><th scope="row">AI understanding of human<small>Accuracy in predicting the human’s intention</small></th><td>77.1%</td><td>73.4%</td><td>87.8%</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="table-note" id="results-note">Post-intervention group means; higher values indicate greater understanding or role fulfillment. These results describe the Overcooked study. Source: manuscript §6.3 and Figure 5.</p>
+      </div>
+    </section>
+
+    <section class="domains-section shell" id="domains" aria-labelledby="domains-title">
+      <div class="section-intro"><p class="eyebrow">04 / Beyond collaboration</p><h2 id="domains-title">Inspecting dispatch, treatment, and attention.</h2><p>Six stakeholders explored the same action–consequence–value structure in three domain probes. Their corrections show how different kinds of expertise can guide a decision.</p></div>
+      <div class="domain-explorer">
+        <div class="domain-tabs" role="tablist" aria-label="Domain probes" hidden data-enhanced>
+          <button type="button" id="tab-transportation" role="tab" aria-controls="panel-transportation" aria-selected="true" tabindex="0" data-domain="0"><span>01</span> Transportation</button>
+          <button type="button" id="tab-medicine" role="tab" aria-controls="panel-medicine" aria-selected="false" tabindex="-1" data-domain="1"><span>02</span> Medicine</button>
+          <button type="button" id="tab-cognition" role="tab" aria-controls="panel-cognition" aria-selected="false" tabindex="-1" data-domain="2"><span>03</span> Cognitive modeling</button>
+        </div>
+
+        <article class="domain-panel" id="panel-transportation" aria-labelledby="transportation-title" data-domain-panel="0">
+          <div class="domain-intro"><div><p class="eyebrow">Transportation / Ride-hailing repositioning</p><h3 id="transportation-title">Will the driver go where the system recommends?</h3></div><p>A recommendation’s intended effect on supply–demand balance depends on whether the driver accepts it and arrives in the target region. The probe connects recommendations to the responses that determine their effect.</p></div>
+          <figure class="domain-figure">
+            <button class="figure-button" type="button" data-zoom aria-label="Enlarge the transportation probe">
+              <img src="assets/transportation-probe.png" width="1520" height="665" alt="Ride-hailing probe: blue branches recommend northeast, southeast, or east destinations; green branches predict driver destinations, with preference ranks and supply–demand values." loading="lazy">
+              <span class="figure-hint" aria-hidden="true">View larger</span>
+            </button>
+            <figcaption>Figure 8 · Based on i-Rebalance. Blue branches show recommendations; green branches show predicted driver responses. Numbered ranks indicate driver preferences; purple marks editing.</figcaption>
+          </figure>
+          <dl class="domain-model"><div><dt>Behavior</dt><dd>Recommended destinations</dd></div><div><dt>Belief</dt><dd>Predicted driver destinations</dd></div><div><dt>Benefit</dt><dd>Supply–demand balance and preference satisfaction</dd></div></dl>
+          <div class="domain-insights"><div><h4>A targeted correction</h4><p>A stakeholder proposed correcting the predicted driver-response distribution when it conflicted with observed behavior, then revisiting the dispatch recommendation using that corrected belief.</p></div><div><h4>What further adaptation needs</h4><p>Driver preferences depend on context such as traffic and expected income. Stakeholders wanted these changing circumstances and potential hazards to be represented explicitly.</p></div></div>
+        </article>
+
+        <article class="domain-panel" id="panel-medicine" aria-labelledby="medicine-title" data-domain-panel="1">
+          <div class="domain-intro"><div><p class="eyebrow">Medicine / Retrospective sepsis-treatment probe</p><h3 id="medicine-title">Which predicted changes justify a treatment?</h3></div><p>Different recommendations may reflect different expectations about the patient’s response. The probe connects treatment choices to predicted physiological trajectories over 24 hours and estimated mortality risk.</p></div>
+          <figure class="domain-figure">
+            <button class="figure-button" type="button" data-zoom aria-label="Enlarge the medicine probe">
+              <img src="assets/medicine-probe.png" width="1520" height="686" alt="Retrospective sepsis probe: treatment options lead to predicted 24-hour vital-sign trajectories and estimated mortality risk. Purple controls mark editable choices, forecasts, and values." loading="lazy">
+              <span class="figure-hint" aria-hidden="true">View larger</span>
+            </button>
+            <figcaption>Figure 9 · Retrospective probe using de-identified MIMIC-IV records and the AI Clinician treatment space. Benefit is estimated mortality risk, with lower values preferred.</figcaption>
+          </figure>
+          <dl class="domain-model"><div><dt>Behavior</dt><dd>Treatment options and their selection probabilities</dd></div><div><dt>Belief</dt><dd>24-hour physiological trajectories and their probabilities</dd></div><div><dt>Benefit</dt><dd>Estimated mortality risk</dd></div></dl>
+          <div class="domain-insights"><div><h4>A targeted correction</h4><p>One participant increased the preference for fluids and vasopressor support over observation while retaining forecasts they considered plausible. Another wanted to correct physiological trends without specifying exact values.</p></div><div><h4>What further adaptation needs</h4><p>Risk estimates need interpretable physiological evidence. Subsequent choices should incorporate the patient’s observed response, with forecasts expressed at a clinically meaningful level of precision.</p></div></div>
+        </article>
+
+        <article class="domain-panel" id="panel-cognition" aria-labelledby="cognition-title" data-domain-panel="2">
+          <div class="domain-intro"><div><p class="eyebrow">Cognitive modeling / Hierarchical reading</p><h3 id="cognition-title">Which reading decision led attention astray?</h3></div><p>A hierarchical RL model decides what to read at the text, sentence, and word levels. The probe exposes how those choices lead to particular fixations and the information the model expects to acquire.</p></div>
+          <figure class="domain-figure">
+            <button class="figure-button" type="button" data-zoom aria-label="Enlarge the cognitive modeling probe">
+              <img src="assets/reading-probe.png" width="1515" height="645" alt="Hierarchical reading probe: text, sentence, and word controllers connect reading choices to expected information. An edit raises skip-next-word probability from 27 to 50 percent and lowers read-next-word from 58 to 35 percent." loading="lazy">
+              <span class="figure-hint" aria-hidden="true">View larger</span>
+            </button>
+            <figcaption>Figure 10 · The hierarchy links reading priorities to word-level attention. Purple marks edits to controller choices, utilities, and expected information.</figcaption>
+          </figure>
+          <dl class="domain-model"><div><dt>Behavior</dt><dd>Choices at the text, sentence, and word levels</dd></div><div><dt>Belief</dt><dd>Information expected along the selected route</dd></div><div><dt>Benefit</dt><dd>Controller utility, with higher values preferred</dd></div></dl>
+          <div class="domain-insights"><div><h4>A targeted correction</h4><p>A participant traced unexpected emphasis on “eco-friendly” to the sentence reader. They proposed raising “skip next word” to about 50%, reducing “read next word,” and revising the associated utility.</p></div><div><h4>What further adaptation needs</h4><p>A correction at one controller expresses a hypothesis about the reading process. Extending it requires behavioral evidence and cognitive theory about how that change should affect later choices.</p></div></div>
+        </article>
+      </div>
+      <aside class="domain-takeaway"><p class="eyebrow">Across the three domains</p><p><strong>Domain knowledge becomes a correction to a specific part of the decision.</strong> Extending that correction to later decisions requires evidence appropriate to the domain—driver responses, observed physiology, or human behavior.</p></aside>
+      <p class="small-note domain-limit">Evidence: six stakeholders, two per domain, in 45–60 minute interviews. These formative probes elicited corrections and design requirements; performance improvements from retraining were not evaluated. Manuscript §7, Figures 8–10.</p>
+    </section>
+
+    <section class="closing shell" aria-labelledby="closing-title">
+      <p class="eyebrow">About the research</p>
+      <h2 class="paper-title" id="closing-title">Editable XRL: Toward Bidirectional Human–Agent Alignment of Rational Decision-Making with Markov Tree Explanations</h2>
+      <div class="closing-actions"><a class="button button-dark" href="#guided-demo">Revisit the demonstration</a><a class="text-link" href="../glass.html#Research">Explore more research</a></div>
+    </section>
+  </main>
+  <footer class="site-footer shell"><a href="../glass.html#Research">Back to CHEN Haoyang’s research</a><span>Editable XRL / CoChoice</span></footer>
+
+  <dialog id="figure-dialog" aria-label="Enlarged research figure">
+    <div class="dialog-toolbar"><span>Research figure</span><div><button type="button" id="zoom-figure" aria-pressed="false">Zoom in</button><button type="button" id="close-figure" autofocus>Close image</button></div></div>
+    <div class="dialog-image-wrap" role="region" aria-label="Research figure; scroll to explore when zoomed" tabindex="0"><img id="dialog-image" alt=""></div>
+    <p id="dialog-caption"></p>
+  </dialog>
+<div class="preview-links shell"><span>Design preview</span><a href="index.html">Original project page</a><a href="../glass.html#Research">Homepage preview</a></div>
+</body>
+</html>

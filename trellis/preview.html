@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Trellis turns LLM conversations into an editable graph. Explore alternatives, merge insights, and inspect the context behind your next answer.">
+  <meta name="theme-color" content="#fdfcf9">
+  <title>Trellis · Choose what your next answer builds on</title>
+  <link rel="canonical" href="https://haoyang-chen.github.io/trellis/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Trellis · Choose what your next answer builds on">
+  <meta property="og:description" content="An editable conversation graph for branching, merging, and controlling LLM context.">
+  <meta property="og:url" content="https://haoyang-chen.github.io/trellis/">
+  <meta property="og:image" content="https://haoyang-chen.github.io/assets/images/trellis-overview.png">
+  <meta property="og:image:alt" content="Trellis transforms linear chat into a graph for branching, merging, context inspection, and structural refactoring.">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="project.css?v=20261029-2">
+  <script src="project.js?v=20261029-1" defer></script>
+  <link rel="stylesheet" href="../glass-theme.css?v=1">
+  <link rel="stylesheet" href="../assets/styles/project-glass.css?v=1">
+  <script src="../assets/scripts/project-glass.js?v=1" defer></script>
+</head>
+<body class="project-preview project-preview--trellis">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="nav-shell">
+      <a class="wordmark" href="#main">Trellis<span aria-hidden="true">.</span></a>
+      <nav aria-label="Project navigation"><a href="#guide">Walkthrough</a><a href="#workspace">Workspace</a><a href="#findings">Findings</a></nav>
+      <a class="home-link" href="../glass.html#Research"><span class="home-name">CHEN Haoyang <span lang="zh">陈昊阳</span></span><span class="home-short">Homepage</span></a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">User-directed context for LLM sensemaking</p>
+        <h1 id="hero-title">Trellis<span>.</span></h1>
+        <p class="hero-statement">Choose what your next answer builds on.</p>
+        <p class="hero-description">An investigation rarely follows one straight line. Trellis turns conversation turns into an <strong>editable graph</strong>: explore alternatives separately, bring useful branches together, and inspect which earlier turns reach the LLM.</p>
+        <aside class="hero-evidence" aria-label="Key research finding">
+          <p class="eyebrow"><a href="#findings">16-person user study</a></p>
+          <p><strong>56.4% of content was created in new branches</strong> beyond the main thread. People used the graph to diverge, then bring ideas back together.</p>
+        </aside>
+        <div class="hero-actions"><a class="button button-dark" href="#guide">Follow an investigation <span aria-hidden="true">↓</span></a><a class="text-link" href="#workspace">See the workspace</a></div>
+      </div>
+      <div class="hero-visual">
+        <figure class="hero-figure">
+          <div class="figure-heading"><span>From a chat to a working graph</span><span>Figure 1</span></div>
+          <a class="figure-button" href="../assets/images/trellis-overview.png" data-zoom aria-label="Enlarge the Trellis overview">
+            <img src="../assets/images/trellis-overview.png" width="2000" height="896" alt="Trellis replaces a linear conversation with a directed acyclic graph. Branches and merges support exploration and integration; a context brief and structural refactoring support overview and revision.">
+            <span class="figure-hint" aria-hidden="true">View larger ↗</span>
+          </a>
+          <figcaption>Each node holds a conversation turn. Connections determine which turns are inherited as context for continuing the conversation.</figcaption>
+        </figure>
+        <div class="hero-principle"><span class="principle-mark" aria-hidden="true">↳</span><p><strong>The graph changes what the LLM receives.</strong><br>It is both a map of the conversation and a control for its context.</p></div>
+      </div>
+    </section>
+
+    <section class="guide-section shell" id="guide" aria-labelledby="guide-title">
+      <div class="section-intro"><p class="eyebrow">01 / Follow an investigation</p><h2 id="guide-title">Two lines of inquiry. One deliberate synthesis.</h2><p>A journalist is investigating AI and the future of work. Organizational change and worker experience need room to develop separately—then a way to inform each other.</p></div>
+      <div class="guided-demo" id="guided-demo">
+        <nav class="guide-steps" aria-label="Walkthrough steps" hidden data-enhanced>
+          <button type="button" data-step="0" aria-current="step" aria-controls="guide-story"><span>01</span> Branch</button>
+          <button type="button" data-step="1" aria-controls="guide-story"><span>02</span> Merge</button>
+          <button type="button" data-step="2" aria-controls="guide-story"><span>03</span> Overview</button>
+          <button type="button" data-step="3" aria-controls="guide-story"><span>04</span> Refactor</button>
+        </nav>
+        <div class="guide-layout">
+          <div class="graph-panel">
+            <div class="graph-heading"><span>AI &amp; the future of work</span><span class="schematic-label">Illustrated scenario</span></div>
+            <div class="conversation-graph" id="conversation-graph" aria-label="Conversation graph. Blue nodes are included in the next turn's context; the outlined node is the continuation point.">
+              <svg class="graph-edges" id="graph-edges" aria-hidden="true"><defs><marker id="edge-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="context-stroke"></path></marker></defs><g id="edge-paths"></g></svg>
+              <div class="graph-node node-root is-included" data-node="root"><span class="node-label">Shared starting question</span><strong>AI and the future of work</strong></div>
+              <div class="graph-node" data-node="organization"><span class="node-label">Branch A</span><strong>Organizational redesign</strong></div>
+              <div class="graph-node is-included" data-node="workers"><span class="node-label">Branch B</span><strong>Worker experience</strong></div>
+              <div class="graph-node" data-node="org-evidence"><span class="node-label">Follow-up A</span><strong>Indicators of redesign</strong></div>
+              <div class="graph-node is-included is-active" data-node="worker-evidence"><span class="node-label">Follow-up B</span><strong>Changes in roles and skills</strong><span class="node-active-label">Continue here</span></div>
+              <div class="graph-node node-synthesis is-future" data-node="synthesis"><span class="node-label">Bring the branches together</span><strong>Labor-management relations</strong><span class="stale-label" hidden>Context changed · review</span></div>
+            </div>
+            <div class="graph-legend"><span><i class="legend-included" aria-hidden="true"></i>Included context</span><span><i class="legend-selected" aria-hidden="true"></i>Continue here</span><span><i class="legend-outside" aria-hidden="true"></i>Outside context</span></div>
+          </div>
+          <div class="guide-detail">
+            <div id="guide-story" class="guide-story" aria-live="polite" aria-atomic="true">
+              <article data-story="0"><p class="eyebrow">01 / Branch</p><h3>Separate the questions without losing the starting point.</h3><p>Continue from the worker-experience branch. The shared question and this branch’s turns form the context for the next response. The organizational branch stays outside it.</p></article>
+              <article data-story="1"><p class="eyebrow">02 / Merge</p><h3>Compare before bringing ideas together.</h3><p>Both branches now inform a question about labor-management relations. Trellis separates shared history from branch-specific material, then lets the user merge directly or ask AI to blend it with an instruction.</p></article>
+              <article data-story="2"><p class="eyebrow">03 / Overview</p><h3>See the whole inquiry—and the part you are using.</h3><p>The context brief links its statements to source nodes. Here, the brief includes both perspectives, while the next response still builds on the worker-experience branch. Select a brief sentence to locate its source.</p></article>
+              <article data-story="3"><p class="eyebrow">04 / Refactor</p><h3>Bring useful context into the current path.</h3><p>Suppose the organizational evidence would help the worker-experience inquiry. Preview a supporting connection, then decide whether to include that branch. Existing downstream responses need review after their context changes.</p></article>
+            </div>
+            <div class="context-brief" id="context-brief" hidden>
+              <p class="eyebrow">Whole-graph brief · linked to its sources</p>
+              <button type="button" data-source="org-evidence"><span>Organizational redesign needs observable indicators.</span><small>Follow-up A ↗</small></button>
+              <button type="button" data-source="worker-evidence"><span>Worker experience raises questions about roles and skills.</span><small>Follow-up B ↗</small></button>
+              <p>A brief can reference both branches while only one is in the next turn’s context.</p>
+            </div>
+            <div class="refactor-controls" id="refactor-controls" hidden>
+              <p class="proposal-label">Proposed connection</p><p class="proposal-path">Indicators of redesign <span aria-hidden="true">→</span> Changes in roles and skills</p>
+              <div class="proposal-actions"><button type="button" class="button button-light" id="preview-edit">Preview connection</button><button type="button" class="button button-dark" id="accept-edit" hidden>Accept</button><button type="button" class="button button-plain" id="reject-edit" hidden>Reject</button><button type="button" class="button button-light" id="reset-edit" hidden>Try again</button></div>
+              <p id="edit-status" role="status">The context stays unchanged until you accept.</p>
+            </div>
+            <div class="context-panel" aria-live="polite" aria-atomic="true">
+              <div class="context-heading"><h4>Context for the next turn</h4><span id="context-count">3 turns</span></div>
+              <ol id="context-list"><li>AI and the future of work</li><li>Worker experience</li><li>Changes in roles and skills</li></ol>
+              <p id="context-note">The other branch remains available on the graph.</p>
+            </div>
+          </div>
+        </div>
+        <div class="guide-controls" hidden data-enhanced><button type="button" id="guide-back" disabled>Previous</button><span id="guide-progress">1 of 4</span><button type="button" class="button button-dark" id="guide-next">Bring the branches together →</button></div>
+      </div>
+      <p class="small-note guide-note">A guided illustration based on the manuscript’s future-of-work scenario (§4.5). The node labels and brief are shortened for this page; no live model is called.</p>
+    </section>
+
+    <section class="workspace-section" id="workspace" aria-labelledby="workspace-title">
+      <div class="shell">
+        <div class="section-intro"><p class="eyebrow">02 / Inside the workspace</p><h2 id="workspace-title">Read a turn. Rework its connections. Inspect its context.</h2><p>Three coordinated views keep the content, conversation structure, and working context together.</p></div>
+        <figure class="workspace-figure">
+          <a class="figure-button" href="assets/interface.png" data-zoom aria-label="Enlarge the Trellis workspace"><img src="assets/interface.png" width="1518" height="804" loading="lazy" alt="Figure 2: the Node Inspector shows an editable prompt and response on the left. The DAG Canvas shows connected conversation turns in the center. The Context Inspector on the right contains a source-linked brief, structural refactoring proposals, and a minimap."><span class="figure-hint" aria-hidden="true">View larger ↗</span></a>
+          <figcaption>Figure 2 · The original Trellis interface. The active path is highlighted; surrounding branches remain available for inspection and reuse.</figcaption>
+        </figure>
+        <div class="workspace-parts">
+          <article><span class="part-letter">A</span><div><h3>Node Inspector</h3><p>Read or edit the selected prompt and response. Continue from the point that matters to the current question.</p></div></article>
+          <article><span class="part-letter">B</span><div><h3>DAG Canvas</h3><p>Branch, merge, cut, and reconnect conversation turns. The selected node anchors the context inherited by the next turn.</p></div></article>
+          <article><span class="part-letter">C</span><div><h3>Context Inspector</h3><p>Use source-linked summaries and a minimap to stay oriented. Preview AI-proposed structural changes before accepting them.</p></div></article>
+        </div>
+        <div class="operation-details">
+          <article><p class="eyebrow">Integration</p><h3>A merge preserves where ideas came from.</h3><p>The comparison view separates shared history from the two branches. Users can inspect overlap, divergence, and complementary information before creating a multi-parent turn.</p><a class="text-link" href="assets/compare-merge.png" data-zoom data-figure-title="Compare and merge · Figure 5" data-figure-alt="Figure 5 shows a merge gesture, a side-by-side comparison of branch-specific turns with shared history above, AI analysis, and Direct Merge and AI Blend and Merge controls." data-caption="Figure 5 · The compare-and-merge view makes shared history and branch-specific content visible before integration.">View the compare-and-merge interface ↗</a></article>
+          <article><p class="eyebrow">Revision</p><h3>A structural edit changes future context.</h3><p>Refactoring can bring supporting turns into a path or remove an unhelpful connection. Users inspect the proposed graph first; changed ancestry marks affected descendants as stale.</p><a class="text-link" href="assets/refactor.png" data-zoom data-figure-title="Structural refactoring · Figure 7" data-figure-alt="Figure 7 shows a structural refactoring proposal with preview, accept, and reject controls. Before and after graphs show the organizational branch being added as support for the worker-experience branch." data-caption="Figure 7 · A bounded refactoring proposal adds a supporting branch to the active path. The user decides whether to apply it.">View the refactoring interface ↗</a></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="findings-section shell" id="findings" aria-labelledby="findings-title">
+      <div class="findings-heading">
+        <div class="section-intro"><p class="eyebrow">03 / What the study found</p><h2 id="findings-title">People used the graph to diverge and converge.</h2><p>16 experienced LLM users compared Trellis with a linear chat interface in a counterbalanced, within-subjects study. Both began with the same five-turn conversation about AI and the future of work.</p></div>
+        <div class="study-size"><strong>16</strong><span>experienced<br>LLM users</span></div>
+      </div>
+      <div class="finding-metrics">
+        <article><strong>56.4<span>%</span></strong><h3>Content beyond the main thread</h3><p>Content produced in newly created branches, reflecting exploration of separate lines of inquiry.</p><small>Interaction logs · §6.1.2</small></article>
+        <article><strong>2.4</strong><h3>Merges per person</h3><p>Users brought branches back together. 76.9% of merges used AI Blend &amp; Merge.</p><small>Mean operations · §6.2.2</small></article>
+        <article><strong>57.3<span>%</span></strong><h3>Refactoring suggestions accepted</h3><p>Users applied proposals selectively, rather than accepting every suggested change.</p><small>Recommendation acceptance · §6.4.2</small></article>
+      </div>
+      <div class="findings-story">
+        <blockquote><p>“it matches how I think—first diverge, then converge.”</p><cite>P3 on integrating branches · §6.2.3</cite></blockquote>
+        <div><h3>More structure also asks for more judgment.</h3><p>Participants described branching as a way to separate lines of thought and avoid interference. Refactoring was harder to use: it could interrupt a clear line of thinking, and participants wanted better explanations of what a proposal would change.</p><p class="small-note">Interviews and observed use · §6.1, §6.4</p></div>
+      </div>
+      <p class="study-scope"><strong>What this study establishes.</strong> Reported sensemaking support and observed use on one text-based research topic. It does not establish more accurate conclusions, broader domain performance, or benefits for group collaboration.</p>
+    </section>
+
+    <section class="closing shell" aria-labelledby="research-title"><p class="eyebrow">The research</p><h2 id="research-title">Trellis: Interpretable DAG Scaffolding for Non-Linear LLM-Assisted Sensemaking</h2><p>The conversation becomes a structure people can inspect and revise—so the next question builds on the context they choose.</p><a class="text-link" href="../glass.html#Research">← Back to research projects</a></section>
+  </main>
+  <footer class="site-footer shell"><span>Trellis</span><span>Figures and findings from the manuscript.</span></footer>
+  <dialog id="figure-dialog" aria-labelledby="figure-dialog-title"><div class="dialog-toolbar"><strong id="figure-dialog-title">Paper figure</strong><div><button id="zoom-figure" type="button" aria-pressed="false">Zoom in</button><button id="close-figure" type="button" autofocus>Close</button></div></div><div class="dialog-image-wrap" tabindex="0" role="region" aria-label="Enlarged figure; scroll to explore when zoomed"><img id="dialog-image" alt=""></div><p id="dialog-caption"></p></dialog>
+<div class="preview-links shell"><span>Design preview</span><a href="index.html">Original project page</a><a href="../glass.html#Research">Homepage preview</a></div>
+</body>
+</html>
