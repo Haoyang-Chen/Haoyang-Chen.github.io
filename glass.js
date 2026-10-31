@@ -8,6 +8,7 @@
   indicator.setAttribute('aria-hidden', 'true');
   list.prepend(indicator);
   let current = -1;
+  let lastClicked = links.findIndex(link => link.hash === location.hash);
   const positionIndicator = () => {
     const link = links[current];
     if (!link || !list.getClientRects().length) return;
@@ -29,18 +30,32 @@
   let scheduled = false;
   const update = () => {
     nav.classList.toggle('is-scrolled', window.scrollY > 24);
-    let index = 0;
-    targets.forEach((target, i) => {
-      if (target && target.getBoundingClientRect().top <= Math.max(160, innerHeight * .3)) index = i;
+    const positions = targets.map(target => target ? target.getBoundingClientRect().top : Infinity);
+    const threshold = Math.max(160, innerHeight * .3);
+    let group = [0];
+    let groupTop = -Infinity;
+    positions.forEach((top, i) => {
+      if (top > threshold) return;
+      if (top > groupTop + 1) { group = [i]; groupTop = top; }
+      else if (Math.abs(top - groupTop) <= 1) group.push(i);
     });
-    if (window.scrollY > 0 && innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) index = links.length - 1;
+    // Side-by-side sections share one scroll position. Preserve the user's
+    // choice within that group rather than always selecting its last heading.
+    if (window.scrollY > 0 && innerHeight + window.scrollY >= document.documentElement.scrollHeight - 4) {
+      const lastTop = positions[positions.length - 1];
+      group = positions.flatMap((top, i) => Math.abs(top - lastTop) <= 1 ? [i] : []);
+    }
+    const index = group.includes(lastClicked) ? lastClicked : group.includes(current) ? current : group[0];
     select(index);
     scheduled = false;
   };
   addEventListener('scroll', () => {
     if (!scheduled) { scheduled = true; requestAnimationFrame(update); }
   }, { passive: true });
-  links.forEach((link, i) => link.addEventListener('click', () => select(i)));
+  links.forEach((link, i) => link.addEventListener('click', () => {
+    lastClicked = i;
+    select(i);
+  }));
   addEventListener('resize', update);
   new ResizeObserver(positionIndicator).observe(list);
   update();

@@ -1,10 +1,10 @@
 /* Compact bibliography with a dedicated, right-aligned resource column. */
 .publication-list dd { display: grid; grid-template-columns: minmax(0,1fr) auto; align-items: start; gap: 24px; }
 .publication-copy { min-width: 0; }
-.publication-links { display: flex; justify-content: flex-end; align-items: center; gap: 17px; padding-top: 4px; white-space: nowrap; }
-.publication-list dd .publication-links a { margin: 0; font-size: 12px; line-height: 1.7; }
+.publication-links { display: flex; justify-content: flex-end; align-items: center; gap: 7px; padding-top: 0; white-space: nowrap; }
+.publication-list dd .publication-links a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: 8px 4px; margin: 0; font-size: 12px; line-height: 1.7; }
 @media (max-width: 700px) {
  .publication-list dd { grid-template-columns: minmax(0,1fr); gap: 9px; }
  .publication-links { padding-top: 0; }
- .publication-list dd .publication-links a { font-size: 11px; }
+ .publication-list dd .publication-links a { font-size: 12px; }
 }

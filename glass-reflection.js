@@ -4,6 +4,8 @@
     const reflection = document.createElement('span');
     reflection.className = 'project-reflection';
     reflection.setAttribute('aria-hidden', 'true');
+    // Keep the enhancement out of the grid flow even before its CSS loads.
+    Object.assign(reflection.style, { position: 'absolute', pointerEvents: 'none' });
     grid.prepend(reflection);
     let frame = 0;
     let point;
