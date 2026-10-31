@@ -76,3 +76,5 @@
  .academic-columns :is(.teaching-term,.service-role) { font-size: 9px; }
  .academic-columns :is(.teaching-item,.service-item) { font-size: 13px; }
 }
+
+@media (min-width: 901px) { .academic-columns .service-list { grid-template-rows: repeat(3,minmax(0,1fr)); } }
