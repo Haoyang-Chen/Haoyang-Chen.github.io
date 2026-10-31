@@ -33,7 +33,7 @@ a:focus-visible, summary:focus-visible { outline: 2px solid #806329; outline-off
 .research-project h3 { font-size: 1.05rem; line-height: 1.4; font-weight: 600; letter-spacing: -0.018em; margin: 0; }
 .research-project h3 a { color: inherit; text-decoration: none; }
 .research-project h3 a:hover { color: var(--gold); text-decoration: underline; text-underline-offset: 3px; }
-.project-image { display: flex; align-items: center; justify-content: center; width: 100%; height: 168px; flex-shrink: 0; margin-bottom: 1rem; padding: 0; border: 0; background: #fff; cursor: zoom-in; text-align: inherit; }
+.project-image { display: flex; align-items: center; justify-content: center; width: 100%; height: 168px; flex-shrink: 0; margin-bottom: 1rem; padding: 0; border: 0; background: #fff; text-align: inherit; }
 .project-image img { display: block; width: auto; height: auto; max-width: 100%; max-height: var(--figure-height, 168px); object-fit: contain; }
 /* Keep each diagram whole; balance its visual weight without matching image heights. */
 .project-image--trellis { --figure-height: 160px; }
@@ -127,26 +127,6 @@ h2{
   .publication-list > dt { padding-bottom: 0.25rem; }
 }
 
-.project-image.is-growing img { opacity: 0; }
-.image-preview {
-  position: fixed;
-  z-index: 1100;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  background: white;
-  border-radius: 6px;
-  transform-origin: top left;
-  cursor: zoom-in;
-  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.22);
-  transition: transform 240ms ease, clip-path 240ms ease, box-shadow 240ms ease;
-}
-.image-preview img { display: block; width: 100%; height: 100%; object-fit: contain; border-radius: inherit; }
-.image-preview.is-pinned { cursor: zoom-out; }
-@media (prefers-reduced-motion: reduce) {
-  .image-preview { transition: none; }
-}
-
 .service-venue { flex: 1 1 24rem; min-width: 0; }
 
 .skip-link { position: fixed; top: -100px; left: 1rem; z-index: 1200; padding: 0.5rem 1rem; background: white; color: #30343b; }
@@ -172,7 +152,6 @@ h2{
 
 /* Keep paper figures neutral while giving the surrounding page a warm tone. */
 .project-image { border-radius: 5px; }
-.project-image:focus-visible { outline: 2px solid var(--gold); outline-offset: 6px; }
 .profile .col-11 a { border: 1px solid var(--line); border-radius: 50%; background: #fff; transition: background 160ms ease, border-color 160ms ease; }
 .profile .col-11 a:hover { background: #f5f0e3; border-color: #c6b58a; }
 .profile .col-11 img { max-width: 22px; max-height: 22px; object-fit: contain; }
