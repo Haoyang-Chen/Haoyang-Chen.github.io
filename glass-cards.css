@@ -43,3 +43,13 @@
 @media (prefers-reduced-transparency: reduce), (forced-colors: active) { .project-grid::before { display: none; } }
 
 @media (prefers-reduced-transparency: reduce), (forced-colors: active) { .research-project::after { display: none; } }
+
+/* The animated reflection is a sibling of the cards. Its compositing layer
+   never becomes an ancestor of the multiply-blended illustrations. */
+.project-reflection { display: none; pointer-events: none; position: absolute; z-index: 2; }
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+ .project-reflection { display: block; opacity: 0; background: radial-gradient(ellipse 260px 165px at var(--light-x, 50%) var(--light-y, 0%), rgba(255,255,255,.27), transparent 78%); transition: opacity 180ms ease; }
+ .project-reflection.is-active { opacity: 1; }
+ .project-reflection::after { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: conic-gradient(from var(--light-angle, 155deg), transparent, rgba(255,255,255,.9) 20%, transparent 42%, rgba(255,255,255,.6) 70%, transparent); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; }
+}
+@media (prefers-reduced-transparency: reduce), (forced-colors: active) { .project-reflection { display: none; } }
