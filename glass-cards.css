@@ -53,3 +53,8 @@
  .project-reflection::after { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; background: conic-gradient(from var(--light-angle, 155deg), transparent, rgba(255,255,255,.9) 20%, transparent 42%, rgba(255,255,255,.6) 70%, transparent); -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); mask-composite: exclude; }
 }
 @media (prefers-reduced-transparency: reduce), (forced-colors: active) { .project-reflection { display: none; } }
+
+/* Crop the PDF figure's a/b heading row in the page; preserve the source asset. */
+.treepin-figure-crop { display: block; width: 100%; max-width: 414px; aspect-ratio: 1800 / 865; overflow: hidden; }
+.project-image--treepinn .treepin-figure-crop img { display: block; width: 100%; max-width: none; height: auto; max-height: none; margin-top: -4.444444%; }
+@media (max-width: 1000px) { .treepin-figure-crop { max-width: 365px; } }
